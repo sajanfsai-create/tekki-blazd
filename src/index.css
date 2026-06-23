@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Theme Brand Colors mapped from your original CSS vars */
+  --color-teal-deep: #04342C;
+  --color-teal-dark: #085041;
+  --color-teal-mid: #0F6E56;
+  --color-teal-base: #1D9E75;
+  --color-teal-light: #5DCAA5;
+  --color-teal-pale: #9FE1CB;
+  --color-teal-ghost: #E1F5EE;
+  
+  --color-amber-base: #EF9F27;
+  --color-amber-dark: #BA7517;
+  --color-amber-light: #FAC775;
+  --color-gold: #FFBF00;
+  
+  --color-grade-a: #085041;
+  --color-grade-b: #1D9E75;
+  --color-grade-c: #EF9F27;
+  --color-grade-d: #BA7517;
+  --color-grade-f: #C8472E;
+  
+  --color-ink: #0D1F1A;
+  --color-text-mid: #2E5049;
+  --color-text-soft: #5A8070;
+  --color-off-white: #F4F8F6;
+
+  /* Typography sets */
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'DM Sans', -apple-system, sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Borders & Shadows */
+  --border-teal-alpha: rgba(29, 158, 117, 0.16);
+  --border-teal-pale-alpha: rgba(159, 225, 203, 0.18);
+  --shadow-hero: 0 16px 50px rgba(4, 52, 44, .14);
+  --shadow-card: 0 4px 18px rgba(4, 52, 44, .08);
+  --shadow-pricing: 0 30px 80px rgba(0, 0, 0, .35);
+  
+  /* Core Custom Animations */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .3; }
+  }
+  @keyframes fillProgress {
+    from { width: 0; }
+  }
+  
+  --animate-blink: blink 1.6s infinite;
+  --animate-progress: fillProgress 1.4s ease-out forwards;
+}
+
+/* Layout Component Shortcuts mimicking your custom wrappers */
+@utility wrap {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
