@@ -8,7 +8,7 @@ export default function Footer() {
           <LogoMark size={32} />
           <span className="font-serif font-bold text-[18px] text-ink leading-none">
             Tekki
-             <span className="text-amber-base pl-0.5">X</span>
+             <span className="text-amber-base pl-1.5">X</span>
           </span>
           <span className="text-[14px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.16)] pl-2">
             Blaze
