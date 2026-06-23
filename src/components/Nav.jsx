@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.16)]">
       <div className="wrap flex items-center justify-between h-[74px] px-4 lg:px-0">
-        
+
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
           <LogoMark size={40} />
@@ -15,9 +15,9 @@ export default function Nav() {
             Tekki
             <span className="text-amber-base pl-1.5">X</span>
           </span>
-          <span className="text-[14px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.16)] pl-2.5">
+          {/* <span className="text-[14px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.16)] pl-2.5">
             Blaze
-          </span>
+          </span> */}
         </a>
 
         {/* Desktop Nav Links */}

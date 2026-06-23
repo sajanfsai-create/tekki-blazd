@@ -12,9 +12,9 @@ export default function Footer() {
               Tekki
               <span className="text-amber-base pl-1.5">X</span>
             </span>
-            <span className="text-[12px] tracking-[3px] font-bold text-teal-base uppercase border-l border-[rgba(255,255,255,0.15)] pl-3">
+            {/* <span className="text-[12px] tracking-[3px] font-bold text-teal-base uppercase border-l border-[rgba(255,255,255,0.15)] pl-3">
               Blaze
-            </span>
+            </span> */}
           </div>
           <p className="text-teal-ghost text-[17px] font-serif font-medium leading-[1.4]">
             Know your machine. One scan,<br />every answer.

@@ -10,21 +10,23 @@ import SafetySection from './components/SafetySection'
 import CloseSection from './components/CloseSection'
 import Footer from './components/Footer'
 import MobileCTA from './components/MobileCTA'
-
+import Reveal from './components/Reveal'
 
 export default function App() {
   return (
-    <div className="font-sans text-ink bg-white antialiased [line-height:1.6] max-sm:pb-[74px]">
+    <div className="font-sans text-ink bg-white antialiased [line-height:1.6] max-sm:pb-[74px] overflow-x-hidden">
       <Nav />
-      <Hero />
-      <TrustStrip />
-      <WhySection />
-      <ChecksSection />
-      <HowItWorks />
-      <DemoSection />
-      <WhoSection />
-      <SafetySection />
-      <CloseSection />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <WhySection />
+        <ChecksSection />
+        <HowItWorks />
+        <DemoSection />
+        <WhoSection />
+        <SafetySection />
+        <CloseSection />
+      </main>
       <Footer />
       <MobileCTA />
     </div>

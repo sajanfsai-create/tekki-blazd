@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, PlayIcon } from './Icons';
+import Reveal from './Reveal';
+import Modal from './Modal';
+import DemoVideoSimulation from './DemoVideoSimulation';
+import SampleReportPreview from './SampleReportPreview';
 
 function AppWindow() {
   const rows = [
@@ -120,94 +124,124 @@ function AppWindow() {
 }
 
 export default function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isReportOpen, setIsReportOpen] = useState(false);
+
   return (
     <header className="py-[70px] md:pb-20 bg-gradient-to-b from-off-white to-white overflow-hidden relative">
       <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-11 lg:gap-14 items-center">
         {/* Left */}
         <div className="flex flex-col items-start">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 text-[12px] tracking-[2px] uppercase font-semibold text-teal-mid bg-teal-ghost border border-[rgba(29,158,117,0.16)] px-4 py-1.5 rounded-full mb-6">
-            <span className="w-2 h-2 rounded-full bg-teal-base"></span>
-            The Windows PC Health Report
-          </div>
+          <Reveal delay={0}>
+            <div className="inline-flex items-center gap-2 text-[12px] tracking-[2px] uppercase font-semibold text-teal-mid bg-teal-ghost border border-[rgba(29,158,117,0.16)] px-4 py-1.5 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-teal-base"></span>
+              The Windows PC Health Report
+            </div>
+          </Reveal>
 
           {/* H1 */}
-          <h1 className="font-inter font-black tracking-tight text-4xl sm:text-[58px] leading-[1.02] mb-6">
-            <span className="text-ink">One scan.</span><br />
-            <span className="text-teal-mid">Every answer.</span><br />
-            <span className="text-amber-base">₹199.</span>
-          </h1>
+          <Reveal delay={100}>
+            <h1 className="font-inter font-black tracking-tight text-4xl sm:text-[58px] leading-[1.02] mb-6">
+              <span className="text-ink">One scan.</span><br />
+              <span className="text-teal-mid">Every answer.</span><br />
+              <span className="text-amber-base">₹199.</span>
+            </h1>
+          </Reveal>
 
-          <p className="text-[19px] text-text-mid mb-4.5 leading-[1.5] max-w-[480px]">
-            A complete, easy-to-read health report of your Windows PC — CPU, storage, graphics, battery and drivers — in about 3 minutes, from a single file.
-          </p>
+          <Reveal delay={200}>
+            <p className="text-[19px] text-text-mid mb-4.5 leading-[1.5] max-w-[480px]">
+              A complete, easy-to-read health report of your Windows PC — CPU, storage, graphics, battery and drivers — in about 3 minutes, from a single file.
+            </p>
+          </Reveal>
 
-          <p className="text-[15px] text-text-soft mb-[34px]">
-            <b className="text-teal-mid font-semibold">Scan · advise · fix</b> — no jargon, just clear answers you can act on.
-          </p>
+          <Reveal delay={300}>
+            <p className="text-[15px] text-text-soft mb-[34px]">
+              <b className="text-teal-mid font-semibold">Scan · advise · fix</b> — no jargon, just clear answers you can act on.
+            </p>
+          </Reveal>
 
           {/* CTA Row */}
-          <div className="flex flex-wrap items-center gap-3.5 mb-[30px]">
-            <a
-              href="#get"
-              className="inline-flex items-center gap-2.5 bg-amber-base text-ink font-bold text-[16px] px-[30px] py-[15px] rounded-xl transition-all duration-150 shadow-[0_8px_24px_rgba(239,159,39,0.3)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(239,159,39,0.45)]"
-            >
-              <ArrowRight />
-              Scan My Laptop · ₹199
-            </a>
-            <a
-              href="#demo"
-              className="inline-flex items-center gap-2.5 font-semibold text-[15px] text-teal-mid px-5 py-3.5 rounded-xl border-[1.5px] border-[rgba(29,158,117,0.16)] bg-transparent transition-all duration-200 hover:border-teal-base hover:bg-teal-ghost"
-            >
-              <span className="w-7 h-7 rounded-full bg-teal-mid flex items-center justify-center shrink-0">
-                <PlayIcon />
-              </span>
-              Watch Demo
-            </a>
-          </div>
+          <Reveal delay={400}>
+            <div className="flex flex-wrap items-center gap-3.5 mb-[30px]">
+              <a
+                href="#get"
+                className="inline-flex items-center gap-2.5 bg-amber-base text-ink font-bold text-[16px] px-[30px] py-[15px] rounded-xl transition-all duration-150 shadow-[0_8px_24px_rgba(239,159,39,0.3)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(239,159,39,0.45)]"
+              >
+                <ArrowRight />
+                Scan My Laptop · ₹199
+              </a>
+              <button
+                onClick={() => setIsVideoOpen(true)}
+                className="inline-flex items-center gap-2.5 font-semibold text-[15px] text-teal-mid px-5 py-3.5 rounded-xl border-[1.5px] border-[rgba(29,158,117,0.16)] bg-transparent transition-all duration-200 hover:border-teal-base hover:bg-teal-ghost cursor-pointer"
+              >
+                <span className="w-7 h-7 rounded-full bg-teal-mid flex items-center justify-center shrink-0">
+                  <PlayIcon />
+                </span>
+                Watch Demo
+              </button>
+            </div>
+          </Reveal>
 
           {/* Mini badges */}
-          <div className="flex flex-wrap gap-5.5 mb-5.5">
-            {['No subscription', 'Shareable PDF report'].map(t => (
-              <div key={t} className="flex items-center gap-1.5 text-[13px] text-text-soft">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.8"/></svg>
-                {t}
-              </div>
-            ))}
-          </div>
+          <Reveal delay={500}>
+            <div className="flex flex-wrap gap-5.5 mb-5.5">
+              {['No subscription', 'Shareable PDF report'].map(t => (
+                <div key={t} className="flex items-center gap-1.5 text-[13px] text-text-soft">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.8"/></svg>
+                  {t}
+                </div>
+              ))}
+            </div>
+          </Reveal>
 
           {/* OS Pills */}
-          <div className="flex flex-wrap gap-2.5 mt-[22px]">
-            {[
-              { label: 'Windows 10 & 11', soon: false },
-              { label: 'Laptops & Desktops', soon: false },
-              { label: 'macOS & Linux — coming soon', soon: true },
-            ].map(({ label, soon }) => (
-              <span
-                key={label}
-                className={`inline-flex items-center gap-1.5 text-[12.5px] px-3.5 py-1.5 rounded-full border border-[rgba(29,158,117,0.16)] ${soon
-                  ? 'text-text-soft bg-white font-medium'
-                  : 'text-teal-mid bg-teal-ghost font-semibold'
-                  }`}
-              >
-                {!soon && (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                    <path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-                {soon ? (
-                  <span dangerouslySetInnerHTML={{ __html: label.replace('coming soon', '<b class="text-amber-dark font-bold">coming soon</b>') }} />
-                ) : label}
-              </span>
-            ))}
-          </div>
+          <Reveal delay={600}>
+            <div className="flex flex-wrap gap-2.5 mt-[22px]">
+              {[
+                { label: 'Windows 10 & 11', soon: false },
+                { label: 'Laptops & Desktops', soon: false },
+                { label: 'macOS & Linux — coming soon', soon: true },
+              ].map(({ label, soon }) => (
+                <span
+                  key={label}
+                  className={`inline-flex items-center gap-1.5 text-[12.5px] px-3.5 py-1.5 rounded-full border border-[rgba(29,158,117,0.16)] ${soon
+                    ? 'text-text-soft bg-white font-medium'
+                    : 'text-teal-mid bg-teal-ghost font-semibold'
+                    }`}
+                >
+                  {!soon && (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                      <path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  {soon ? (
+                    <span dangerouslySetInnerHTML={{ __html: label.replace('coming soon', '<b class="text-amber-dark font-bold">coming soon</b>') }} />
+                  ) : label}
+                </span>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
         {/* Right – App Window */}
-        <div className="w-full flex justify-center lg:justify-start">
-          <AppWindow />
-        </div>
+        <Reveal delay={300}>
+          <div className="w-full flex justify-center lg:justify-start">
+            <AppWindow />
+          </div>
+        </Reveal>
       </div>
+
+      <Modal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)}>
+        <DemoVideoSimulation onViewReport={() => {
+          setIsVideoOpen(false);
+          setTimeout(() => setIsReportOpen(true), 300);
+        }} />
+      </Modal>
+
+      <Modal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)}>
+        <SampleReportPreview />
+      </Modal>
     </header>
   );
 }

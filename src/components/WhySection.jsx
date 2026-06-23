@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 function AlertCard({ type = 'warn', icon, title, desc }) {
   const borderColor = type === 'ok' ? 'border-l-teal-base' : 'border-l-amber-base'
@@ -70,26 +71,30 @@ function Thermometer() {
 function FeatRow({ tag, title, desc, bullets, visual, reverse = false }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-15 items-center mb-[90px] last:mb-0">
-      <div className={reverse ? 'md:order-2' : ''}>
-        <span className="inline-block text-[11px] tracking-wide uppercase font-bold text-teal-mid bg-teal-ghost px-3.5 py-1.5 rounded-b-[8px] rounded-t-[8px] mb-4.5">
-          {tag}
-        </span>
-        <h3 className="font-inter font-black tracking-tight text-3xl md:text-[32px] text-ink mb-3.5 leading-[1.1]">
-          {title}
-        </h3>
-        <p className="text-[16px] text-text-mid leading-[1.65] mb-4.5">{desc}</p>
-        <ul className="space-y-3">
-          {bullets.map((b, i) => (
-            <li key={i} className="flex items-center gap-2.5 text-[14.5px] text-text-mid">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7"/></svg>
-              {b}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className={`bg-off-white border border-[rgba(29,158,117,0.16)] rounded-2xl p-[30px] shadow-card ${reverse ? 'md:order-1' : ''}`}>
-        {visual}
-      </div>
+      <Reveal delay={0}>
+        <div className={reverse ? 'md:order-2' : ''}>
+          <span className="inline-block text-[11px] tracking-wide uppercase font-bold text-teal-mid bg-teal-ghost px-3.5 py-1.5 rounded-b-[8px] rounded-t-[8px] mb-4.5">
+            {tag}
+          </span>
+          <h3 className="font-inter font-black tracking-tight text-3xl md:text-[32px] text-ink mb-3.5 leading-[1.1]">
+            {title}
+          </h3>
+          <p className="text-[16px] text-text-mid leading-[1.65] mb-4.5">{desc}</p>
+          <ul className="space-y-3">
+            {bullets.map((b, i) => (
+              <li key={i} className="flex items-center gap-2.5 text-[14.5px] text-text-mid">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7"/></svg>
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
+      <Reveal delay={150}>
+        <div className={`bg-off-white border border-[rgba(29,158,117,0.16)] rounded-2xl p-[30px] shadow-card ${reverse ? 'md:order-1' : ''}`}>
+          {visual}
+        </div>
+      </Reveal>
     </div>
   )
 }
@@ -98,13 +103,19 @@ export default function WhySection() {
   return (
     <section id="why" className="py-24">
       <div className="wrap">
-        <div className="text-[13px] tracking-[3px] uppercase font-extrabold text-teal-base mb-3.5 text-center">Why Tekki Blaze</div>
-        <h2 className="font-inter font-black tracking-tight text-[34px] md:text-[48px] leading-[1.04] text-center text-ink max-w-[680px] mx-auto mb-4.5">
-          It doesn't just scan.<br />It <span className="text-teal-mid">explains.</span>
-        </h2>
-        <p className="text-[17px] text-text-mid text-center max-w-[580px] mx-auto mb-14">
-          Free tools throw raw numbers at you. Tekki Blaze gives you a grade, a reason and a fix — in language anyone can read.
-        </p>
+        <Reveal delay={0}>
+          <div className="text-[13px] tracking-[3px] uppercase font-extrabold text-teal-base mb-3.5 text-center">Why Tekki Blaze</div>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="font-inter font-black tracking-tight text-[34px] md:text-[48px] leading-[1.04] text-center text-ink max-w-[680px] mx-auto mb-4.5">
+            It doesn't just scan.<br />It <span className="text-teal-mid">explains.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="text-[17px] text-text-mid text-center max-w-[580px] mx-auto mb-14">
+            Free tools throw raw numbers at you. Tekki Blaze gives you a grade, a reason and a fix — in language anyone can read.
+          </p>
+        </Reveal>
 
         <div className="mt-5">
           <FeatRow
