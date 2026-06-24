@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 function AlertCard({ type = 'warn', icon, title, desc }) {
   const borderColor = type === 'ok' ? 'border-l-teal-base' : 'border-l-amber-base'
   const bgIcon = type === 'ok' ? 'bg-teal-ghost' : 'bg-[#FCF0DC]'
-  
+
   return (
     <div className={`bg-white border border-[rgba(29,158,117,0.16)] border-l-3 ${borderColor} rounded-lg p-4 md:px-4.5 flex gap-[13px] items-start ${type === 'warn' ? 'mb-3' : ''}`}>
       <span className={`w-[34px] h-[34px] rounded-lg flex items-center justify-center shrink-0 ${bgIcon}`}>
@@ -83,7 +83,7 @@ function FeatRow({ tag, title, desc, bullets, visual, reverse = false }) {
           <ul className="space-y-3">
             {bullets.map((b, i) => (
               <li key={i} className="flex items-center gap-2.5 text-[14.5px] text-text-mid">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7"/></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7" /></svg>
                 {b}
               </li>
             ))}
@@ -127,13 +127,13 @@ export default function WhySection() {
               <>
                 <AlertCard
                   type="warn"
-                  icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="#BA7517" strokeWidth="1.8" strokeLinejoin="round"/><path d="M12 10v3" stroke="#BA7517" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="16" r="1" fill="#BA7517"/></svg>}
+                  icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="#BA7517" strokeWidth="1.8" strokeLinejoin="round" /><path d="M12 10v3" stroke="#BA7517" strokeWidth="2" strokeLinecap="round" /><circle cx="12" cy="16" r="1" fill="#BA7517" /></svg>}
                   title="SSD health at 72% — keep an eye on it"
                   desc="Your drive is fine today, but wearing. Back up important files and plan a replacement in 6–9 months."
                 />
                 <AlertCard
                   type="ok"
-                  icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7"/></svg>}
+                  icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#1D9E75" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="12" r="9" stroke="#1D9E75" strokeWidth="1.7" /></svg>}
                   title="No crash patterns detected"
                   desc="Your event logs are clean over the last 30 days."
                 />
@@ -145,7 +145,7 @@ export default function WhySection() {
             tag="A grade you trust"
             title="One letter says it all"
             desc="Every scan ends in a simple A–F hardware grade — framed as a clear market standard, never a scare warning. Read it in a glance, share it with anyone."
-            bullets={['Beautiful, shareable PDF report', 'Per-component sub-scores']}
+            bullets={['shareable PDF report', 'Per-component sub-scores']}
             visual={<GradeScale />}
             reverse
           />
