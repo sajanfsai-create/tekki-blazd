@@ -19,6 +19,12 @@ export default function Footer() {
           <p className="text-teal-ghost text-[17px] font-serif font-medium leading-[1.4]">
             Know your machine. One scan,<br />every answer.
           </p>
+          <div className="mt-8 text-teal-ghost text-[14px] leading-relaxed max-w-[280px]">
+            <h4 className="text-teal-light text-[13px] font-bold tracking-[2px] uppercase mb-2">Address</h4>
+            <p>467/468, Shri Krishna Temple Rd,</p>
+            <p>Indira Nagar 1st Stage, Stage 1,</p>
+            <p>Indiranagar, Bengaluru, Karnataka 560038</p>
+          </div>
         </div>
 
         {/* Right Side: Links */}
@@ -57,10 +63,10 @@ export default function Footer() {
         <div className="border-t border-[rgba(93,202,165,0.2)] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-teal-light">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span>&copy; {new Date().getFullYear()} Tekki-X &middot; tekki-x.com</span>
-            <span className="hidden sm:inline">&middot;</span>
-            <span>
+            {/* <span className="hidden sm:inline">&middot;</span> */}
+            {/* <span>
               Developed by <a href="https://bostontechindia.in/" target="_blank" rel="noopener noreferrer" className="text-amber-base font-bold hover:text-amber-light underline underline-offset-2 transition-colors">Boston Tech India</a>
-            </span>
+            </span> */}
           </div>
           <div className="flex gap-3">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
