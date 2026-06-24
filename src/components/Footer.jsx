@@ -43,7 +43,7 @@ export default function Footer() {
             <h4 className="text-teal-light text-[13px] font-bold tracking-[2px] uppercase mb-1">Resources</h4>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Demo Video</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Sample Report</a>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Help & FAQ</a>
+            <a href="/help" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Help & FAQ</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Contact</a>
           </div>
 
@@ -69,11 +69,13 @@ export default function Footer() {
             </span> */}
           </div>
           <div className="flex gap-3">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="/help" className="hover:text-white transition-colors">Help</a>
             <span>&middot;</span>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
             <span>&middot;</span>
-            <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+            <span>&middot;</span>
+            <a href="/refund" className="hover:text-white transition-colors">Refund Policy</a>
           </div>
         </div>
       </div>
