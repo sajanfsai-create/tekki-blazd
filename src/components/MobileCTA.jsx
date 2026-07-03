@@ -5,7 +5,7 @@ export default function MobileCTA() {
         href="#get"
         className="flex justify-center items-center gap-2 bg-amber-base text-ink font-bold text-[15px] w-full py-3.5 rounded-xl shadow-[0_4px_14px_rgba(239,159,39,0.35)]"
       >
-        Get Tekki Blaze · ₹199
+        Get Tekki Blaze · ₹299
       </a>
     </div>
   )

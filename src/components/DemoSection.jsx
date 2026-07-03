@@ -9,53 +9,63 @@ export default function DemoSection() {
   const [isReportOpen, setIsReportOpen] = useState(false);
 
   return (
-    <section className="bg-off-white py-24" id="demo">
-      <div className="wrap">
+    <section className="bg-white py-12 md:py-5" id="demo">
+      <div className="wrap max-w-[840px]">
+
         <Reveal delay={0}>
-          <div className="text-[13px] tracking-[3px] uppercase font-extrabold text-teal-base mb-3.5 text-center">See It For Yourself</div>
-        </Reveal>
-        <Reveal delay={100}>
-          <h2 className="font-inter font-black tracking-tight text-[34px] md:text-[48px] leading-[1.04] text-center text-ink max-w-[680px] mx-auto mb-4.5">Watch a scan.<br />Read a real report.</h2>
-        </Reveal>
-        <Reveal delay={200}>
-          <p className="text-[17px] text-text-mid text-center max-w-[580px] mx-auto mb-14">See exactly what you get before you pay a single rupee.</p>
-        </Reveal>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Reveal delay={300}>
-            <div className="group rounded-2xl p-11 md:p-14 relative overflow-hidden min-h-[300px] flex flex-col justify-end bg-gradient-to-br from-teal-mid to-teal-deep text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(4,52,44,0.3)]">
-              <div className="absolute top-0 left-[-100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]"></div>
-              <div className="absolute top-[42px] left-11 md:left-14 w-15 h-15 rounded-xl bg-white/18 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" className="transition-transform duration-500 group-hover:scale-110"><path d="M8 5v14l11-7z"/></svg>
+          <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-[20px] p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start shadow-[0_4px_24px_rgba(4,52,44,0.02)]">
+
+            {/* Left Graphic */}
+            <div className="flex flex-col gap-2.5 shrink-0 pt-2 pl-2">
+              <div className="w-[84px] h-[84px] rounded-[18px] bg-[#125845] flex items-center justify-center shrink-0 mb-1 shadow-sm">
+                <span className="font-serif font-bold text-[48px] text-white leading-none">A</span>
               </div>
-              <h3 className="font-inter font-black text-3xl tracking-tight mb-3">The 3-minute scan demo</h3>
-              <p className="text-[16px] mb-7 max-w-[380px] leading-[1.55] text-teal-pale">A full Tekki Blaze scan — from download to finished health report. No edits, no tricks.</p>
-              <button onClick={() => setIsVideoOpen(true)} className="inline-flex items-center gap-2.75 font-extrabold text-[16px] px-[30px] py-[15px] rounded-xl self-start transition-transform duration-150 bg-white text-teal-mid hover:-translate-y-0.75 cursor-pointer">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="#0F6E56"><path d="M8 5v14l11-7z"/></svg> Play Demo Video
-              </button>
+              <div className="w-[100px] h-[7px] rounded-full bg-[#1b9a70]"></div>
+              <div className="w-[90px] h-[7px] rounded-full bg-[#1b9a70]"></div>
+              <div className="w-[80px] h-[7px] rounded-full bg-[#f1a129]"></div>
+              <div className="w-[90px] h-[7px] rounded-full bg-[#1b9a70]"></div>
             </div>
-          </Reveal>
-          
-          <Reveal delay={450}>
-            <div className="group rounded-2xl p-11 md:p-14 relative overflow-hidden min-h-[300px] flex flex-col justify-end bg-gradient-to-br from-amber-base to-amber-dark text-ink transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(239,159,39,0.35)]">
-              <div className="absolute top-0 left-[-100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]"></div>
-              <div className="absolute top-[42px] left-11 md:left-14 w-15 h-15 rounded-xl bg-ink/12 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="transition-transform duration-500 group-hover:scale-110"><path d="M7 3h8l5 5v11a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0D1F1A" strokeWidth="1.8" strokeLinejoin="round"/><path d="M14 3v5h5" stroke="#0D1F1A" strokeWidth="1.8"/></svg>
+
+            {/* Right Content */}
+            <div className="flex-1">
+              <div className="text-[12px] tracking-[3px] uppercase font-bold text-[#b57d2a] mb-2.5">
+                Proof, not promises
               </div>
-              <h3 className="font-inter font-black text-3xl tracking-tight mb-3">A sample report</h3>
-              <p className="text-[16px] mb-7 max-w-[380px] leading-[1.55] text-teal-deep/85">Open a real, anonymised A–F report PDF — the exact document you receive after a scan.</p>
-              <button onClick={() => setIsReportOpen(true)} className="inline-flex items-center gap-2.75 font-extrabold text-[16px] px-[30px] py-[15px] rounded-xl self-start transition-transform duration-150 bg-teal-deep text-white hover:-translate-y-0.75 cursor-pointer">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M14 3v5h5M9 13h6M9 17h6M7 3h8l5 5v11a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#fff" strokeWidth="1.8" strokeLinejoin="round"/></svg> View Sample Report
-              </button>
+              <h2 className="font-inter font-black tracking-tight text-[24px] md:text-[28px] leading-[1.2] text-ink mb-3">
+                From scan to a shareable A–F report.
+              </h2>
+              <p className="text-[15px] md:text-[16px] text-text-mid max-w-[540px] mb-6 leading-[1.6]">
+                Watch a 2-minute walkthrough, or download a real sample report to see exactly what you get.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setIsReportOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 font-bold text-[14.5px] px-5 py-2.5 rounded-xl transition-all duration-200 bg-white text-ink border border-[rgba(29,158,117,0.2)] hover:border-[rgba(29,158,117,0.4)] hover:bg-off-white hover:-translate-y-0.5"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Sample PDF
+                </button>
+                <button
+                  onClick={() => setIsVideoOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 font-bold text-[14.5px] px-6 py-2.5 rounded-xl transition-all duration-200 bg-[#0d221c] text-white hover:bg-[#153a2f] hover:-translate-y-0.5"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z" /></svg>
+                  Watch video
+                </button>
+              </div>
             </div>
-          </Reveal>
-        </div>
+
+          </div>
+        </Reveal>
+
       </div>
 
+      {/* Modals for Video and Report */}
       <Modal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)}>
         <DemoVideoSimulation onViewReport={() => {
           setIsVideoOpen(false);
-          setTimeout(() => setIsReportOpen(true), 300); // Slight delay for smoother transition
+          setTimeout(() => setIsReportOpen(true), 300);
         }} />
       </Modal>
 

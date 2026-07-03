@@ -62,3 +62,12 @@
   padding-left: 32px;
   padding-right: 32px;
 }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}

@@ -120,7 +120,7 @@ export default function Terms() {
               <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">7. Pricing, GST &amp; payment</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Prices are displayed in Indian Rupees (₹) and are <strong>exclusive of GST</strong> unless stated otherwise; applicable GST is added at checkout.</li>
-                <li>The standard price is <strong>₹199 per scan</strong>, with multi-scan packs (e.g. 3-pack ₹499, 5-pack ₹749) and bulk/partner pricing as published or separately agreed.</li>
+                <li>The standard price is <strong>₹299 per scan</strong>, with multi-scan packs (e.g. 3-pack ₹499, 5-pack ₹749) and bulk/partner pricing as published or separately agreed.</li>
                 <li>Payment is collected through a third-party payment gateway. You agree to provide accurate billing details. A GST-compliant invoice will be made available for each purchase.</li>
                 <li>We may revise prices prospectively; changes will not affect scans already purchased.</li>
               </ul>

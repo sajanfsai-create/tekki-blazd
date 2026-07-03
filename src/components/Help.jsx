@@ -170,7 +170,7 @@ export default function Help() {
               <span className="w-5.5 h-5.5 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-base flex-shrink-0 transition-transform duration-200 group-open:rotate-45 group-open:bg-amber-500 group-open:text-emerald-950">+</span>
             </summary>
             <div className="px-4.5 pb-5 text-[14.5px] text-emerald-900/80">
-              <p><strong>₹199 per scan</strong> (plus GST), with no subscription. Value packs are available — <strong>3-pack ₹499</strong> and <strong>5-pack ₹749</strong> — and bulk pricing for repair shops and businesses.</p>
+              <p><strong>₹299 per scan</strong> (plus GST), with no subscription. Value packs are available — <strong>3-pack ₹499</strong> and <strong>5-pack ₹749</strong> — and bulk pricing for repair shops and businesses.</p>
             </div>
           </details>
 

@@ -22,16 +22,16 @@ export default function Nav() {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-[30px]">
-          <a href="#why" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Why Blaze</a>
-          <a href="#checks" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">What It Checks</a>
           <a href="#how" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">How It Works</a>
-          <a href="#who-for" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Who It's For</a>
-          <a href="#get" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Pricing</a>
+          <a href="#why" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Why Blaze</a>
+          <a href="#checks" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">What's Checked</a>
+          <a href="#pricing" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Pricing</a>
+          <a href="#faq" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">FAQ</a>
           <a
             href="#get"
             className="bg-amber-base text-ink font-bold text-sm px-[22px] py-[11px] rounded-lg transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(239,159,39,0.4)]"
           >
-            Get Tekki Blaze · ₹199
+            Get Tekki Blaze
           </a>
         </div>
 
@@ -61,17 +61,17 @@ export default function Nav() {
       {/* Mobile Menu Dropdown */}
       <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="px-4 pt-2 pb-6 bg-white border-t border-[rgba(29,158,117,0.1)] flex flex-col gap-4 shadow-lg">
-          <a href="#why" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Why Blaze</a>
-          <a href="#checks" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">What It Checks</a>
           <a href="#how" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">How It Works</a>
-          <a href="#who-for" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Who It's For</a>
-          <a href="#get" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Pricing</a>
+          <a href="#why" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Why Blaze</a>
+          <a href="#checks" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">What's Checked</a>
+          <a href="#pricing" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Pricing</a>
+          <a href="#faq" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">FAQ</a>
           <a
             href="#get"
             onClick={() => setIsOpen(false)}
             className="bg-amber-base text-ink font-bold text-center text-sm py-3 rounded-lg mt-2 block"
           >
-            Get Tekki Blaze · ₹199
+            Get Tekki Blaze
           </a>
         </div>
       </div>

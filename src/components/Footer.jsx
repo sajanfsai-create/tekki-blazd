@@ -48,13 +48,12 @@ export default function Footer() {
           </div>
 
           {/* Column 3 */}
-          {/* <div className="flex flex-col gap-4">
-            <h4 className="text-teal-light text-[13px] font-bold tracking-[2px] uppercase mb-1">Tekki Family</h4>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Tekki Blaze Pro</a>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Tekki Hyper</a>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">For Business</a>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Partners</a>
-          </div> */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-teal-light text-[13px] font-bold tracking-[2px] uppercase mb-1">Legal</h4>
+            <a href="/privacy" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Terms of Service</a>
+            <a href="/refund" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Refund Policy</a>
+          </div>
         </div>
       </div>
 
