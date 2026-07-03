@@ -113,8 +113,8 @@ export default function PricingSection() {
                 Partner tools live on a dedicated page — bulk licensing, repair leads, and lifecycle certification.
               </p>
             </div>
-            <button className="whitespace-nowrap font-bold text-[14px] text-white bg-teal-mid hover:bg-teal-base px-6 py-3 rounded-lg transition-colors shadow-sm shrink-0">
-              Become a Partner &rarr;
+            <button className="whitespace-nowrap font-bold text-[14px] text-white bg-teal-mid/80 px-6 py-3 rounded-lg shadow-sm shrink-0 cursor-not-allowed" disabled>
+              Launching soon
             </button>
           </div>
         </Reveal>
