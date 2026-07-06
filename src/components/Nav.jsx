@@ -89,7 +89,7 @@ export default function Nav() {
             return (
               <a
                 key={link.id}
-                href={link.href ? link.href : `#${link.id}`}
+                href={link.href ? (link.href.startsWith('/') ? link.href : `/${link.href}`) : `/#${link.id}`}
                 data-nav-link={link.id}
                 className={`relative text-[15px] pb-1 transition-colors duration-200 ${isActive
                   ? "font-bold text-teal-mid"
@@ -102,7 +102,7 @@ export default function Nav() {
             )
           })}
           <a
-            href="#pricing"
+            href="/#pricing"
             className="bg-ink text-white font-semibold text-[15px] px-[24px] py-[10px] rounded-full transition-all duration-150 hover:bg-black hover:shadow-lg ml-2"
           >
             Get Tekki Blaze
@@ -140,7 +140,7 @@ export default function Nav() {
             return (
               <a
                 key={link.id}
-                href={link.href ? link.href : `#${link.id}`}
+                href={link.href ? (link.href.startsWith('/') ? link.href : `/${link.href}`) : `/#${link.id}`}
                 onClick={() => setIsOpen(false)}
                 className={`relative self-start text-base py-1 ${isActive
                   ? "font-bold text-teal-mid"
@@ -153,7 +153,7 @@ export default function Nav() {
             )
           })}
           <a
-            href="#pricing"
+            href="/#pricing"
             onClick={() => setIsOpen(false)}
             className="bg-ink text-white font-semibold text-center text-base py-3 rounded-full mt-2 block hover:bg-black transition-colors"
           >
