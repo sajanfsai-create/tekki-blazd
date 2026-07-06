@@ -117,7 +117,7 @@ export default function PricingSection() {
               <span className="text-text-soft ml-1">Partner tools live on a dedicated page — bulk licensing, repair leads, and lifecycle certification.</span>
             </div>
             <button className="whitespace-nowrap font-bold text-[14px] text-amber-dark bg-white border border-[rgba(29,158,117,0.15)] px-[24px] py-[12px] rounded-[10px] shadow-sm hover:border-[rgba(29,158,117,0.3)] hover:bg-[#fbfcfc] transition-all">
-              Become a Partner &rarr;
+            Launcing Soon &rarr;
             </button>
           </div>
         </Reveal>
