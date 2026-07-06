@@ -15,7 +15,7 @@ export default function FAQSection() {
       a: (
         <>
           <p className="mb-5 text-[15px] leading-[1.6] text-text-mid">The entire raw diagnostic pipeline runs on your device, inside your own memory. The cloud only acts as a styling layer that turns finished data into your clean PDF. <span className="font-bold text-ink">Zero cloud retention</span> — no log files, usage data or hardware identifiers are stored permanently. We never build a profile of your device.</p>
-          
+
           <div className="space-y-3.5">
             <div className="flex items-start gap-3">
               <div className="mt-0.5 text-amber-base shrink-0">
@@ -131,16 +131,16 @@ export default function FAQSection() {
   return (
     <section className="py-24 bg-white" id="faq">
       <div className="wrap max-w-[840px]">
-        
+
         {/* Header matching inspiration image exactly */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-[48px]">
           <Reveal delay={0}>
-            <div className="text-[12px] tracking-[3px] uppercase font-bold text-amber-base mb-4">Transparency</div>
-            <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-ink mb-5">
-              Questions,<br/>
-              <span className="text-[#0d523c]">answered plainly.</span>
+            <div className="text-[11px] tracking-[2px] uppercase font-bold text-amber-dark mb-[12px]">Transparency</div>
+            <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-ink mb-[20px]">
+              Questions,<br />
+              <span className="text-[#0f6e56]">answered plainly.</span>
             </h2>
-            <p className="text-[17px] text-text-mid max-w-[660px] mx-auto leading-[1.6]">
+            <p className="text-[16px] text-text-mid max-w-[700px] mx-auto leading-[1.6]">
               Everything a privacy-conscious user, first-time buyer, or IT professional wants to know.
             </p>
           </Reveal>
@@ -152,13 +152,12 @@ export default function FAQSection() {
             return (
               <Reveal delay={100 + (index * 50)} key={index}>
                 <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(4,52,44,0.02)] transition-shadow hover:shadow-[0_4px_16px_rgba(4,52,44,0.04)]">
-                  
+
                   {/* The header is what gets the black border when active */}
-                  <button 
+                  <button
                     onClick={() => toggleAccordion(index)}
-                    className={`w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 outline-none transition-all duration-300 rounded-t-2xl ${
-                      isOpen ? 'border-b-0 border-[1.5px] border-ink rounded-b-[10px]' : 'border-[1.5px] border-transparent'
-                    }`}
+                    className={`w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 outline-none transition-all duration-300 rounded-t-2xl ${isOpen ? 'border-b-0 border-[1.5px] border-ink rounded-b-[10px]' : 'border-[1.5px] border-transparent'
+                      }`}
                     style={{ margin: isOpen ? '-1px' : '0' }} // Offset the border width so it doesn't shift the layout
                   >
                     <div className="flex items-center gap-4 md:gap-5">
@@ -177,8 +176,8 @@ export default function FAQSection() {
                       )}
                     </div>
                   </button>
-                  
-                  <div 
+
+                  <div
                     className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] pb-8 pt-5 opacity-100' : 'max-h-0 pb-0 pt-0 opacity-0'}`}
                   >
                     <div className="pl-0 md:pl-[62px]">

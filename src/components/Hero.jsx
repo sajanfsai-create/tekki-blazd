@@ -62,26 +62,26 @@ function AppWindow() {
   return (
     <div className="w-full bg-white border border-[rgba(29,158,117,0.16)] rounded-2xl shadow-hero overflow-hidden">
       {/* Title bar */}
-      <div className="bg-teal-deep px-[18px] py-[14px] flex items-center gap-2">
+      <div className="bg-ink px-[18px] py-[14px] flex items-center gap-2">
         <span className="w-[11px] h-[11px] rounded-full bg-[#FF6058] shrink-0"></span>
         <span className="w-[11px] h-[11px] rounded-full bg-[#FFBE2F] shrink-0"></span>
         <span className="w-[11px] h-[11px] rounded-full bg-[#28C940] shrink-0"></span>
-        <span className="ml-3.5 font-mono text-[12px] text-teal-pale">tekki-blaze · health-report</span>
+        <span className="ml-3.5 font-mono text-[11.5px] text-amber-light">tekki-blaze · health-report</span>
         <span className="ml-auto flex items-center gap-1.5 text-[11px] text-teal-light font-semibold">
-          <span className="w-[7px] h-[7px] rounded-full bg-teal-base animate-blink"></span> SCAN COMPLETE
+          <span className="w-[6px] h-[6px] rounded-full bg-amber-base animate-blink"></span> SCAN COMPLETE
         </span>
       </div>
 
       <div className="p-[26px] pb-7">
         {/* Header */}
         <div className="flex items-center gap-[18px] mb-[22px]">
-          <div className="w-[88px] h-[88px] rounded-xl bg-gradient-to-br from-teal-dark to-teal-base flex items-center justify-center shrink-0 shadow-[0_10px_26px_rgba(8,80,65,0.35)]">
-            <span className="font-serif font-bold text-[46px] text-white leading-none">A</span>
+          <div className="w-[88px] h-[88px] rounded-xl bg-gradient-to-br from-teal-deep to-teal-mid flex items-center justify-center shrink-0 shadow-[0_10px_26px_rgba(8,80,65,0.35)]">
+            <span className="font-serif font-bold text-[42px] text-white leading-none">A</span>
           </div>
           <div>
-            <div className="text-[12px] tracking-wider uppercase text-text-soft font-semibold mb-1">Overall Hardware Grade</div>
-            <div className="font-serif text-[23px] font-bold text-ink mb-0.5">Healthy & Reliable</div>
-            <div className="text-[13px] text-text-soft">12 components checked · 0 critical issues</div>
+            <div className="text-[11.5px] tracking-[1px] uppercase text-text-soft font-semibold mb-[3px]">Overall Hardware Grade</div>
+            <div className="font-serif text-[21px] font-bold text-ink mb-[2px]">Healthy & Reliable</div>
+            <div className="text-[12.5px] text-text-soft">12 components checked · 0 critical issues</div>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ function AppWindow() {
           {rows.map((row, i) => (
             <div key={i} className={`flex items-center gap-3 py-2.5 ${i < rows.length - 1 ? 'border-b border-[rgba(29,158,117,0.16)]' : ''}`}>
               <span className="w-8 h-8 rounded-lg bg-teal-ghost flex items-center justify-center shrink-0">{row.icon}</span>
-              <span className="text-[13.5px] font-semibold text-ink w-24 shrink-0 truncate">{row.label}</span>
+              <span className="text-[13px] font-semibold text-ink w-24 shrink-0 truncate">{row.label}</span>
               <div className="flex-1 h-2 rounded-sm bg-off-white overflow-hidden min-w-[50px]">
                 <i className={`block h-full rounded-sm ${row.barColor} animate-progress`} style={{ width: row.pct }}></i>
               </div>
@@ -109,18 +109,18 @@ function AppWindow() {
         </div>
 
         {/* Footer buttons */}
-        <div className="flex gap-2.5 mt-[22px]">
-          <a href="#demo" className="flex-1 flex items-center justify-center gap-1.5 text-center text-[13px] font-bold p-3 rounded-lg bg-teal-mid text-white hover:opacity-95 transition-opacity">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0 inline-block align-[-2px]"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <div className="flex gap-[9px] mt-[16px]">
+          <a href="#demo" className="flex-1 flex items-center justify-center gap-1.5 text-center text-[12.5px] font-bold p-[11px] rounded-[11px] bg-ink text-amber-base hover:bg-black transition-colors">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0 inline-block align-[-2px]"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
             <span>Download PDF</span>
           </a>
-          <a href="#demo" className="flex-1 text-center text-[13px] font-bold p-3 rounded-lg bg-off-white border border-[rgba(29,158,117,0.16)] text-teal-mid hover:bg-[#eaf2ee] transition-colors">
-            Share on WhatsApp
+          <a href="#demo" className="flex-1 text-center text-[12.5px] font-bold p-[11px] rounded-[11px] bg-off-white border border-[rgba(239,159,39,0.3)] text-amber-base hover:bg-[#fcf0dc] transition-colors">
+            Share via WhatsApp
           </a>
         </div>
 
         {/* Verification Banner */}
-        <div className="mt-4 bg-[#eaf7f2] text-[#0f6e56] rounded-lg px-3.5 py-2.5 flex items-center justify-center gap-2 text-[12.5px] font-medium">
+        <div className="mt-[12px] bg-teal-ghost text-teal-mid rounded-[10px] px-3 py-[8px] flex items-center justify-center gap-[7px] text-[12px] font-semibold">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8"/><path d="M8 12l2.5 2.5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
           Scan ID: A29F · Anyone can verify this report at tekki-x.com/verify
         </div>
@@ -134,10 +134,10 @@ export default function Hero() {
   const [isReportOpen, setIsReportOpen] = useState(false);
 
   return (
-    <header className="py-[70px] md:pb-20 bg-gradient-to-b from-off-white to-white overflow-hidden relative">
-      <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-11 lg:gap-14 items-center">
+    <header className="py-[70px] md:pb-20 bg-[radial-gradient(110%_70%_at_80%_0%,var(--color-teal-ghost),var(--color-off-white)_52%,var(--color-white))] overflow-hidden relative">
+      <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-11 lg:gap-14 items-center relative z-10">
         {/* Left */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start relative z-10">
           {/* Eyebrow */}
           <Reveal delay={0}>
             <div className="inline-flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-bold text-text-soft mb-6">
@@ -148,7 +148,7 @@ export default function Hero() {
 
           {/* H1 */}
           <Reveal delay={100}>
-            <h1 className="font-inter font-black tracking-tight text-4xl sm:text-[58px] leading-[1.02] mb-6">
+            <h1 className="font-inter font-black tracking-[-0.035em] text-[38px] sm:text-[56px] leading-[1.0] mb-5">
               <span className="text-ink">One scan.</span><br />
               <span className="text-[#0e614c]">Every answer.</span><br />
               <span className="text-amber-base">₹299*</span>
@@ -156,38 +156,38 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="text-[13px] text-text-mid mb-6 leading-[1.5] max-w-[490px]">
+            <p className="text-[17px] text-text-mid mb-[10px] leading-[1.55] max-w-[460px] font-light">
               A clear, shareable A–F health report for any Windows computer in about three minutes. Every ₹299 includes two scans — one to diagnose, one to confirm your fix.
             </p>
           </Reveal>
 
           {/* Features */}
           <Reveal delay={300}>
-            <div className="flex flex-col items-start gap-6 mb-7">
-              <div className="inline-flex items-center gap-2 bg-[#eaf7f2] text-[#0f6e56] px-4 py-2 rounded-full border border-[#d2efe6] text-[14.5px] font-semibold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <div className="flex flex-col items-start gap-4 mb-4">
+              <div className="inline-flex items-center gap-[7px] bg-teal-ghost text-teal-mid px-[14px] py-[6px] rounded-[30px] border border-border-teal-alpha text-[12.5px] font-semibold">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Zero cloud retention — your data never leaves your device
               </div>
 
-              <div className="text-[15.5px] text-text-soft">
-                Comparable to a <span className="line-through decoration-text-soft/60">₹2,000</span> professional diagnostic — <span className="text-amber-dark font-bold">two scans for ₹299*</span>
+              <div className="text-[13px] text-text-soft mb-[18px]">
+                Comparable to a <s className="text-text-soft/70 decoration-text-soft/60">₹2,000</s> professional diagnostic — <b className="text-amber-dark font-bold">two scans for ₹299*</b>
               </div>
             </div>
           </Reveal>
 
           {/* CTA Row */}
           <Reveal delay={400}>
-            <div className="flex flex-wrap items-center gap-4 mb-6">
+            <div className="flex flex-wrap items-center gap-[12px] mb-[16px]">
               <a
                 href="#get"
-                className="inline-flex items-center gap-2 bg-amber-base text-ink font-bold text-[16.5px] px-[26px] py-[14px] rounded-xl transition-all duration-150 shadow-[0_8px_24px_rgba(239,159,39,0.3)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(239,159,39,0.45)]"
+                className="inline-flex items-center gap-[10px] bg-amber-base text-ink font-bold text-[15px] px-[26px] py-[14px] rounded-[12px] transition-all duration-150 shadow-[0_8px_24px_rgba(239,159,39,0.28)] hover:-translate-y-[3px] hover:shadow-[0_14px_32px_rgba(239,159,39,0.42)] border-none"
               >
                 Scan my computer · ₹299*
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="ml-1"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
               <button
                 onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-1.5 font-medium text-[16px] text-[#0e614c] hover:opacity-80 transition-opacity cursor-pointer px-3"
+                className="inline-flex items-center gap-[7px] font-semibold text-[14px] text-text-mid hover:text-amber-dark transition-colors cursor-pointer px-2"
               >
                 Watch a scan &rarr;
               </button>
@@ -196,14 +196,14 @@ export default function Hero() {
 
           {/* Mini badges / OS Pills */}
           <Reveal delay={500}>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-1.5 text-[14.5px] text-[#0e614c] font-semibold">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <div className="flex flex-col gap-[14px]">
+              <div className="flex items-center gap-[6px] text-[12.5px] text-teal-mid font-semibold mb-[14px]">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Second scan credit never expires — fix at your own pace
               </div>
-              <div className="flex items-center gap-2 text-[13.5px] text-text-soft">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0"><path d="M20 6L9 17l-5-5" stroke="#0e614c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span>Windows 10 & 11 · Laptops & Desktops · macOS & Linux <span className="text-amber-dark font-bold underline underline-offset-2 cursor-pointer hover:text-amber-base transition-colors">Join Waitlist &rarr;</span></span>
+              <div className="flex items-center gap-[6px] text-[12.5px] text-text-soft">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <span>Windows 10 & 11 · Laptops & Desktops · macOS & Linux <span className="text-amber-dark font-bold underline underline-offset-2 cursor-pointer hover:text-amber-base transition-colors ml-1">Join Waitlist &rarr;</span></span>
               </div>
             </div>
           </Reveal>

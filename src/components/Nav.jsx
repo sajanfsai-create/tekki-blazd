@@ -1,42 +1,117 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LogoMark } from './Icons'
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  const navLinks = [
+    { id: 'how', label: 'How It Works' },
+    { id: 'why', label: 'Why Blaze' },
+    { id: 'checks', label: "What's Checked" },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'faq', label: 'FAQ' },
+    { id: 'partner', label: 'Become a Partner', href: 'tekkiblaze-partners.html' },
+  ]
+
+  // Track scroll position to update active section and scroll progress bar
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate continuous scroll progress percentage
+      const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      const maxHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = maxHeight > 0 ? (scrolled / maxHeight) * 100 : 0;
+      setScrollProgress(scrollPercent);
+
+      // Determine active section for bold text highlighting
+      const sectionIds = navLinks.map(link => link.id)
+      let currentActive = ''
+      
+      // Iterate backwards to find the last section that has scrolled past the offset
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i]
+        const element = document.getElementById(id)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          // Offset allows the section to become active slightly before it hits the very top
+          if (rect.top <= 150) {
+            currentActive = id
+            break
+          }
+        }
+      }
+      
+      // Clear active state if near top
+      if (window.scrollY < 50) {
+        currentActive = ''
+      }
+      
+      if (currentActive !== activeSection) {
+        setActiveSection(currentActive)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    // Initial check
+    handleScroll()
+    
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [activeSection])
 
   return (
-    <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.16)]">
+    <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.16)] relative">
+      
+      {/* Scroll Progress Bar container (100% width) */}
+      <div className="absolute bottom-[-1px] left-0 h-[2px] w-full z-10 pointer-events-none">
+        {/* The actual extending bar */}
+        <div 
+          className="h-full bg-gradient-to-r from-teal-mid to-amber-base transition-all duration-100 ease-linear"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
+
       <div className="wrap flex items-center justify-between h-[74px] px-4 lg:px-0">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        <a href="#" className="flex items-center gap-3 relative z-20">
           <LogoMark size={40} />
           <span className="font-serif font-bold text-[22px] text-ink leading-none">
             Tekki
             <span className="text-amber-base pl-1.5">X</span>
           </span>
-          {/* <span className="text-[14px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.16)] pl-2.5">
-            Blaze
-          </span> */}
         </a>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-[30px]">
-          <a href="#how" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">How It Works</a>
-          <a href="#why" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Why Blaze</a>
-          <a href="#checks" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">What's Checked</a>
-          <a href="#pricing" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">Pricing</a>
-          <a href="#faq" className="text-sm font-medium text-text-mid hover:text-teal-mid transition-colors duration-200">FAQ</a>
+        <div className="hidden lg:flex items-center gap-[30px] relative z-20">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id
+            return (
+              <a 
+                key={link.id}
+                href={link.href ? link.href : `#${link.id}`} 
+                data-nav-link={link.id}
+                className={`relative text-[15px] pb-1 transition-colors duration-200 ${
+                  isActive 
+                    ? "font-bold text-teal-mid" 
+                    : "font-medium text-text-mid hover:text-teal-mid"
+                }`}
+              >
+                {link.label}
+                <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
+              </a>
+            )
+          })}
           <a
-            href="#get"
-            className="bg-amber-base text-ink font-bold text-sm px-[22px] py-[11px] rounded-lg transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(239,159,39,0.4)]"
+            href="#pricing"
+            className="bg-ink text-white font-semibold text-[15px] px-[24px] py-[10px] rounded-full transition-all duration-150 hover:bg-black hover:shadow-lg ml-2"
           >
             Get Tekki Blaze
           </a>
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex items-center lg:hidden">
+        <div className="flex items-center lg:hidden relative z-20">
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
@@ -59,17 +134,30 @@ export default function Nav() {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+      <div className={`lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'} relative z-10`}>
         <div className="px-4 pt-2 pb-6 bg-white border-t border-[rgba(29,158,117,0.1)] flex flex-col gap-4 shadow-lg">
-          <a href="#how" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">How It Works</a>
-          <a href="#why" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Why Blaze</a>
-          <a href="#checks" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">What's Checked</a>
-          <a href="#pricing" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">Pricing</a>
-          <a href="#faq" onClick={() => setIsOpen(false)} className="text-base font-medium text-text-mid hover:text-teal-mid py-1">FAQ</a>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id
+            return (
+              <a 
+                key={link.id}
+                href={link.href ? link.href : `#${link.id}`} 
+                onClick={() => setIsOpen(false)}
+                className={`relative self-start text-base py-1 ${
+                  isActive 
+                    ? "font-bold text-teal-mid" 
+                    : "font-medium text-text-mid hover:text-teal-mid"
+                }`}
+              >
+                {link.label}
+                <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
+              </a>
+            )
+          })}
           <a
-            href="#get"
+            href="#pricing"
             onClick={() => setIsOpen(false)}
-            className="bg-amber-base text-ink font-bold text-center text-sm py-3 rounded-lg mt-2 block"
+            className="bg-ink text-white font-semibold text-center text-base py-3 rounded-full mt-2 block hover:bg-black transition-colors"
           >
             Get Tekki Blaze
           </a>

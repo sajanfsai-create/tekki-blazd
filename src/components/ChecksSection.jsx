@@ -6,6 +6,11 @@ export default function ChecksSection() {
     {
       title: 'Core Compute',
       subtitle: '4 checks · the performance backbone',
+      icon: (
+        <div className="w-[14px] h-[14px] border-[2px] border-amber-base rounded-[2px] flex items-center justify-center">
+          <div className="w-[4px] h-[4px] bg-amber-base rounded-[1px]"></div>
+        </div>
+      ),
       items: [
         { title: 'Component Health', desc: 'CPU, GPU & RAM verified at OS level.' },
         { title: 'Storage & SSD Wear', desc: 'Drive health, wear level & read speed.' },
@@ -16,6 +21,11 @@ export default function ChecksSection() {
     {
       title: 'Peripherals & Power',
       subtitle: '4 checks · everything you plug in',
+      icon: (
+        <div className="w-[18px] h-[12px] border-[2px] border-amber-base rounded-[2px] flex items-center justify-center">
+          <div className="w-[4px] h-[4px] bg-amber-base rounded-[1px]"></div>
+        </div>
+      ),
       items: [
         { title: 'Device Tests', desc: 'Camera, mic, speakers & touchpad.' },
         { title: 'Driver Issues', desc: 'Errors, missing & disabled devices.' },
@@ -26,6 +36,13 @@ export default function ChecksSection() {
     {
       title: 'Event-Log Intelligence',
       subtitle: '4 checks · reading between the lines',
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF9F27" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      ),
       items: [
         { title: 'Error Intelligence', desc: 'Crash patterns from Windows event logs.' },
         { title: 'Crash / BSOD History', desc: 'Blue-screen & WHEA records decoded.' },
@@ -39,7 +56,7 @@ export default function ChecksSection() {
     <section className="bg-[#fbfcfc] py-24" id="checks">
       <div className="wrap max-w-[1240px]">
         <Reveal delay={0}>
-          <div className="text-[12px] tracking-[3px] uppercase font-bold text-amber-base mb-4 text-center">Inside Every Scan</div>
+          <div className="text-[12px] tracking-[3px] uppercase font-bold text-amber-dark mb-4 text-center">Inside Every Scan</div>
           <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-center text-ink max-w-[700px] mx-auto mb-5">
             12 checks,<br/>grouped the way <span className="text-[#0d523c]">engineers think.</span>
           </h2>
@@ -55,13 +72,11 @@ export default function ChecksSection() {
                 
                 {/* Card Header (Icon + Titles) */}
                 <div className="flex gap-4 items-center mb-6 pb-6 border-b border-[rgba(29,158,117,0.12)]">
-                  <div className="w-[52px] h-[52px] bg-[#073126] rounded-[14px] flex items-center justify-center shrink-0 shadow-sm">
-                    <div className="w-[14px] h-[14px] border-[2px] border-amber-base rounded-[2px] flex items-center justify-center">
-                      <div className="w-[4px] h-[4px] bg-amber-base rounded-[1px]"></div>
-                    </div>
+                  <div className="w-[52px] h-[52px] bg-ink rounded-[14px] flex items-center justify-center shrink-0 shadow-sm">
+                    {category.icon}
                   </div>
                   <div>
-                    <h3 className="font-inter font-black text-[20px] text-[#bd6811] mb-1">{category.title}</h3>
+                    <h3 className="font-inter font-black text-[20px] text-amber-dark mb-1 tracking-tight">{category.title}</h3>
                     <div className="text-[13px] text-text-soft">{category.subtitle}</div>
                   </div>
                 </div>

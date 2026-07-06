@@ -2,7 +2,7 @@ export default function HowItWorks() {
   return (
     <section id="how" className="py-20 md:py-24 bg-white">
       <div className="wrap">
-        <div className="text-[12px] tracking-[3px] uppercase font-bold text-teal-base mb-4 text-center">
+        <div className="text-[12px] tracking-[3px] uppercase font-bold text-amber-dark mb-4 text-center">
           The Core Journey
         </div>
         <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-center mb-5">
