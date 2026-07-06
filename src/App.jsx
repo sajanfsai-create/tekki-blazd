@@ -17,6 +17,7 @@ import Help from './components/Help'
 import Refund from './components/Refund'
 import Privacy from './components/Privacy'
 import Terms from './components/Terms'
+import PartnersApp from './PartnersApp'
 
 function MainContent() {
   return (
@@ -53,6 +54,8 @@ export default function App() {
       <Route path="/privacy.html" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/terms.html" element={<Terms />} />
+      <Route path="/tekkiblaze-partners" element={<PartnersApp />} />
+      <Route path="/tekkiblaze-partners.html" element={<PartnersApp />} />
     </Routes>
   )
 }

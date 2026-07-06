@@ -9,7 +9,7 @@ export default function PricingSection() {
           <Reveal delay={0}>
             <div className="text-[11px] tracking-[2px] uppercase font-bold text-amber-dark mb-[12px]">Simple Pricing</div>
             <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-ink mb-[20px]">
-              Two scans.<br/><span className="text-[#0f6e56]">₹299.</span> No subscription.
+              Two scans.<br /><span className="text-[#0f6e56]">₹299.</span> No subscription.
             </h2>
             <p className="text-[16px] text-text-mid max-w-[600px] mx-auto leading-[1.6] mb-[32px]">
               One-time payment. Every ₹299 includes two scans — one to diagnose, one to confirm your fix. No recurring charges, ever.
@@ -24,7 +24,7 @@ export default function PricingSection() {
           {/* Card 1: Best Value */}
           <Reveal delay={100}>
             <div className="relative rounded-[24px] bg-white text-ink p-[32px] lg:p-[40px] flex flex-col h-full shadow-[0_20px_40px_rgba(239,159,39,0.08)] border-[1.5px] border-amber-base transform hover:-translate-y-1 transition-transform duration-300">
-              
+
               <div className="absolute top-[24px] right-[24px] bg-amber-base text-ink font-bold text-[11px] tracking-wider uppercase px-[12px] py-[6px] rounded-[12px] shadow-sm">
                 Best value
               </div>
@@ -64,7 +64,7 @@ export default function PricingSection() {
           {/* Card 2: Household Pack */}
           <Reveal delay={200}>
             <div className="relative rounded-[24px] bg-white border border-[rgba(29,158,117,0.15)] text-ink p-[32px] lg:p-[40px] flex flex-col h-full shadow-[0_8px_24px_rgba(4,52,44,0.04)] transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(4,52,44,0.08)] hover:border-[rgba(29,158,117,0.3)] transition-all duration-300">
-              
+
               <div className="mb-[24px]">
                 <h3 className="font-inter font-black text-[22px] mb-[12px]">Household Pack</h3>
                 <div className="flex items-start gap-1 mb-[8px]">
@@ -106,17 +106,17 @@ export default function PricingSection() {
         <Reveal delay={300}>
           <div className="text-center mb-16">
             <p className="text-[14px] text-text-soft">
-              One-time payment · UPI / card · no subscription, ever. <br className="sm:hidden"/>*Plus applicable GST at checkout.
+              One-time payment · UPI / card · no subscription, ever. <br className="sm:hidden" />*Plus applicable GST at checkout.
             </p>
           </div>
 
           {/* Partner Banner */}
           <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-[20px] p-[28px] md:p-[32px] flex flex-col items-start shadow-[0_4px_24px_rgba(4,52,44,0.03)]">
             <div className="text-[15px] leading-[1.6] mb-[20px]">
-              <span className="font-inter font-black text-ink">Are you a repair shop, IT reseller, or refurbisher?</span> 
+              <span className="font-inter font-black text-ink">Are you a repair shop, IT reseller, or refurbisher?</span>
               <span className="text-text-soft ml-1">Partner tools live on a dedicated page — bulk licensing, repair leads, and lifecycle certification.</span>
             </div>
-            <a href="/tekkiblaze-partners.html" className="whitespace-nowrap font-bold text-[14px] text-amber-dark bg-white border border-[rgba(29,158,117,0.15)] px-[24px] py-[12px] rounded-[10px] shadow-sm hover:border-[rgba(29,158,117,0.3)] hover:bg-[#fbfcfc] transition-all">
+            <a href="/tekkiblaze-partners" className="whitespace-nowrap font-bold text-[14px] text-amber-dark bg-white border border-[rgba(29,158,117,0.15)] px-[24px] py-[12px] rounded-[10px] shadow-sm hover:border-[rgba(29,158,117,0.3)] hover:bg-[#fbfcfc] transition-all">
               Launching Soon &rarr;
             </a>
           </div>

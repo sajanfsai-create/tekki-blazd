@@ -5,7 +5,7 @@ export default function PartnersApp() {
   return (
     <>
       <Nav />
-      <div className='py-10' >
+      <div className='py-5' >
 
       </div>
       <div className='flex justify-center item-center' >
@@ -17,7 +17,7 @@ export default function PartnersApp() {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-amber-base/5 rounded-full blur-3xl -z-10 -translate-x-1/3 translate-y-1/3"></div>
 
           {/* Main Card */}
-          <div className="p-5 mt-34 max-w-md w-full bg-white p-10 md:p-12 rounded-[24px] shadow-[0_20px_40px_rgba(4,52,44,0.06)] border border-[rgba(29,158,117,0.15)] relative">
+          <div className="p-5  max-w-md w-full bg-white p-10 md:p-12 rounded-[24px] shadow-[0_20px_40px_rgba(4,52,44,0.06)] border border-[rgba(29,158,117,0.15)] relative">
 
             {/* Subtle inner decoration */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-base/10 rounded-bl-full rounded-tr-[24px] -z-10 blur-xl"></div>

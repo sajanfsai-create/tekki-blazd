@@ -12,7 +12,7 @@ export default function Nav() {
     { id: 'checks', label: "What's Checked" },
     { id: 'pricing', label: 'Pricing' },
     { id: 'faq', label: 'FAQ' },
-    { id: 'partner', label: 'Become a Partner', href: 'tekkiblaze-partners.html' },
+    { id: 'partner', label: 'Become a Partner', href: 'tekkiblaze-partners' },
   ]
 
   // Track scroll position to update active section and scroll progress bar
@@ -27,7 +27,7 @@ export default function Nav() {
       // Determine active section for bold text highlighting
       const sectionIds = navLinks.map(link => link.id)
       let currentActive = ''
-      
+
       // Iterate backwards to find the last section that has scrolled past the offset
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const id = sectionIds[i]
@@ -41,12 +41,12 @@ export default function Nav() {
           }
         }
       }
-      
+
       // Clear active state if near top
       if (window.scrollY < 50) {
         currentActive = ''
       }
-      
+
       if (currentActive !== activeSection) {
         setActiveSection(currentActive)
       }
@@ -55,17 +55,17 @@ export default function Nav() {
     window.addEventListener('scroll', handleScroll)
     // Initial check
     handleScroll()
-    
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [activeSection])
 
   return (
     <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.16)] relative">
-      
+
       {/* Scroll Progress Bar container (100% width) */}
       <div className="absolute bottom-[-1px] left-0 h-[2px] w-full z-10 pointer-events-none">
         {/* The actual extending bar */}
-        <div 
+        <div
           className="h-full bg-gradient-to-r from-teal-mid to-amber-base transition-all duration-100 ease-linear"
           style={{ width: `${scrollProgress}%` }}
         ></div>
@@ -87,15 +87,14 @@ export default function Nav() {
           {navLinks.map((link) => {
             const isActive = activeSection === link.id
             return (
-              <a 
+              <a
                 key={link.id}
-                href={link.href ? link.href : `#${link.id}`} 
+                href={link.href ? link.href : `#${link.id}`}
                 data-nav-link={link.id}
-                className={`relative text-[15px] pb-1 transition-colors duration-200 ${
-                  isActive 
-                    ? "font-bold text-teal-mid" 
-                    : "font-medium text-text-mid hover:text-teal-mid"
-                }`}
+                className={`relative text-[15px] pb-1 transition-colors duration-200 ${isActive
+                  ? "font-bold text-teal-mid"
+                  : "font-medium text-text-mid hover:text-teal-mid"
+                  }`}
               >
                 {link.label}
                 <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
@@ -139,15 +138,14 @@ export default function Nav() {
           {navLinks.map((link) => {
             const isActive = activeSection === link.id
             return (
-              <a 
+              <a
                 key={link.id}
-                href={link.href ? link.href : `#${link.id}`} 
+                href={link.href ? link.href : `#${link.id}`}
                 onClick={() => setIsOpen(false)}
-                className={`relative self-start text-base py-1 ${
-                  isActive 
-                    ? "font-bold text-teal-mid" 
-                    : "font-medium text-text-mid hover:text-teal-mid"
-                }`}
+                className={`relative self-start text-base py-1 ${isActive
+                  ? "font-bold text-teal-mid"
+                  : "font-medium text-text-mid hover:text-teal-mid"
+                  }`}
               >
                 {link.label}
                 <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
