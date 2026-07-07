@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/tekkiblaze-partners",
-      "destination": "/tekkiblaze-partners.html"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
