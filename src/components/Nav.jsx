@@ -7,12 +7,11 @@ export default function Nav() {
   const [scrollProgress, setScrollProgress] = useState(0)
 
   const navLinks = [
-    { id: 'how', label: 'How It Works' },
+    { id: 'journey', label: 'How It Works' },
     { id: 'why', label: 'Why Blaze' },
     { id: 'checks', label: "What's Checked" },
     { id: 'pricing', label: 'Pricing' },
     { id: 'faq', label: 'FAQ' },
-    { id: 'partner', label: 'Become a Partner', href: 'tekkiblaze-partners' },
   ]
 
   // Track scroll position to update active section and scroll progress bar
@@ -60,50 +59,57 @@ export default function Nav() {
   }, [activeSection])
 
   return (
-    <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.16)] relative">
+    <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.14)] relative">
 
       {/* Scroll Progress Bar container (100% width) */}
       <div className="absolute bottom-[-1px] left-0 h-[2px] w-full z-10 pointer-events-none">
         {/* The actual extending bar */}
         <div
-          className="h-full bg-gradient-to-r from-teal-mid to-amber-base transition-all duration-100 ease-linear"
+          className="h-full bg-gradient-to-r from-teal-base to-amber-brand transition-all duration-100 ease-linear"
           style={{ width: `${scrollProgress}%` }}
         ></div>
       </div>
 
-      <div className="wrap flex items-center justify-between h-[74px] px-4 lg:px-0">
+      <div className="wrap flex items-center justify-between h-[68px] px-4 lg:px-0">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 relative z-20">
-          <LogoMark size={40} />
-          <span className="font-serif font-bold text-[22px] text-ink leading-none">
+        <a href="#top" className="flex items-center gap-3 relative z-20">
+          <LogoMark size={36} />
+          <span className="font-serif font-bold text-[21px] text-ink leading-none">
             Tekki
-            <span className="text-amber-base pl-1.5">X</span>
+            <span className="text-amber-brand pl-1.5">X</span>
           </span>
+          {/* <span className="text-[10px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.14)] pl-2.5">Blaze</span> */}
         </a>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-[30px] relative z-20">
+        <div className="hidden lg:flex items-center gap-6 relative z-20">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id
             return (
               <a
                 key={link.id}
-                href={link.href ? (link.href.startsWith('/') ? link.href : `/${link.href}`) : `/#${link.id}`}
+                href={`/#${link.id}`}
                 data-nav-link={link.id}
-                className={`relative text-[15px] pb-1 transition-colors duration-200 ${isActive
-                  ? "font-bold text-teal-mid"
-                  : "font-medium text-text-mid hover:text-teal-mid"
+                className={`relative text-[14px] pb-1 transition-colors duration-200 ${isActive
+                  ? "font-semibold text-teal-mid"
+                  : "font-medium text-text-mid hover:text-amber-dark"
                   }`}
               >
                 {link.label}
-                <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-amber-brand rounded-sm transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
               </a>
             )
           })}
           <a
+            href="/tekkiblaze-partners"
+            className="text-text-soft text-[13px] hover:text-text-mid transition-colors"
+          >
+            Become a Partner
+          </a>
+          <a
             href="/#pricing"
-            className="bg-ink text-white font-semibold text-[15px] px-[24px] py-[10px] rounded-full transition-all duration-150 hover:bg-black hover:shadow-lg ml-2"
+            className="bg-ink text-white font-semibold text-[14px] px-5 py-2.5 rounded-xl transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(239,159,39,0.3)] hover:bg-amber-brand hover:text-ink ml-1"
           >
             Get Tekki Blaze
           </a>
@@ -140,7 +146,7 @@ export default function Nav() {
             return (
               <a
                 key={link.id}
-                href={link.href ? (link.href.startsWith('/') ? link.href : `/${link.href}`) : `/#${link.id}`}
+                href={`/#${link.id}`}
                 onClick={() => setIsOpen(false)}
                 className={`relative self-start text-base py-1 ${isActive
                   ? "font-bold text-teal-mid"
@@ -148,14 +154,21 @@ export default function Nav() {
                   }`}
               >
                 {link.label}
-                <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-base rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
+                <span className={`absolute left-0 bottom-0 w-full h-[2.5px] bg-amber-brand rounded-full transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0'}`}></span>
               </a>
             )
           })}
           <a
+            href="/tekkiblaze-partners"
+            onClick={() => setIsOpen(false)}
+            className="self-start text-text-soft text-[13px]"
+          >
+            Become a Partner
+          </a>
+          <a
             href="/#pricing"
             onClick={() => setIsOpen(false)}
-            className="bg-ink text-white font-semibold text-center text-base py-3 rounded-full mt-2 block hover:bg-black transition-colors"
+            className="bg-ink text-white font-semibold text-center text-base py-3 rounded-xl mt-2 block hover:bg-amber-brand hover:text-ink transition-colors"
           >
             Get Tekki Blaze
           </a>

@@ -1,128 +1,92 @@
 import React, { useState } from 'react';
-import { ArrowRight, PlayIcon } from './Icons';
+import { ArrowRight } from './Icons';
 import Reveal from './Reveal';
 import Modal from './Modal';
 import DemoVideoSimulation from './DemoVideoSimulation';
 import SampleReportPreview from './SampleReportPreview';
 
 function AppWindow() {
-  const rows = [
-    {
-      icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="14" height="14" rx="2" stroke="#0F6E56" strokeWidth="1.7" /><rect x="9" y="9" width="6" height="6" fill="#0F6E56" /></svg>,
-      label: 'Processor',
-      pct: '94%',
-      score: '94/100',
-      status: 'Good',
-      statusBg: 'bg-teal-ghost',
-      statusText: 'text-teal-mid',
-      barColor: 'bg-teal-base'
-    },
-    {
-      icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="10" rx="1.5" stroke="#0F6E56" strokeWidth="1.7" /><path d="M8 7V4M16 7V4" stroke="#0F6E56" strokeWidth="1.7" strokeLinecap="round" /></svg>,
-      label: 'Memory',
-      pct: '88%',
-      score: '88/100',
-      status: 'Good',
-      statusBg: 'bg-teal-ghost',
-      statusText: 'text-teal-mid',
-      barColor: 'bg-teal-base'
-    },
-    {
-      icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 7c0-1.1 3.1-2 7-2s7 .9 7 2-3.1 2-7 2-7-.9-7-2z" stroke="#BA7517" strokeWidth="1.6" /><path d="M5 7v10c0 1.1 3.1 2 7 2s7-.9 7-2V7" stroke="#BA7517" strokeWidth="1.6" /></svg>,
-      label: 'Storage SSD',
-      pct: '72%',
-      score: '72/100',
-      status: 'Watch',
-      statusBg: 'bg-[#FCF0DC]',
-      statusText: 'text-amber-dark',
-      barColor: 'bg-amber-base'
-    },
-    {
-      icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2" stroke="#0F6E56" strokeWidth="1.7" /><path d="M10 4h4v2h-4z" fill="#0F6E56" /></svg>,
-      label: 'Battery',
-      pct: '81%',
-      score: '81/100',
-      status: 'Good',
-      statusBg: 'bg-teal-ghost',
-      statusText: 'text-teal-mid',
-      barColor: 'bg-teal-base'
-    },
-    {
-      icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3v9" stroke="#0F6E56" strokeWidth="1.7" strokeLinecap="round" /><circle cx="12" cy="16" r="4" stroke="#0F6E56" strokeWidth="1.7" /></svg>,
-      label: 'Thermals',
-      pct: '90%',
-      score: '90/100',
-      status: 'Good',
-      statusBg: 'bg-teal-ghost',
-      statusText: 'text-teal-mid',
-      barColor: 'bg-teal-base'
-    }
+  const scanRows = [
+    { label: 'Component Health', pct: '94%', score: '94/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Storage & SSD Wear', pct: '72%', score: '72/100', status: 'Watch', statusBg: 'bg-amber-ghost', statusText: 'text-amber-dark', barColor: 'bg-amber-brand' },
+    { label: 'Heat & Throttling', pct: '90%', score: '90/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Battery Health', pct: '81%', score: '81/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Connectivity', pct: '92%', score: '92/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
   ];
 
+  const careRows = [
+    { label: 'Smart Updates', pct: '84%', score: '84/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Driver Issues', pct: '78%', score: '78/100', status: 'Watch', statusBg: 'bg-amber-ghost', statusText: 'text-amber-dark', barColor: 'bg-amber-brand' },
+    { label: 'Crash / BSOD History', pct: '95%', score: '95/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Registry Health', pct: '87%', score: '87/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
+    { label: 'Hardware Fingerprint', pct: '100%', score: 'Verified', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base', isMono11: true },
+  ];
+
+  const renderRow = (row, i, isLast) => (
+    <div key={i} className={`flex items-center gap-2.5 py-1 ${!isLast ? 'border-b border-[rgba(29,158,117,0.14)]' : ''}`}>
+      <span className="text-[13px] font-semibold text-ink w-[150px] truncate">{row.label}</span>
+      <div className="flex-1 h-1.5 rounded-sm bg-off-white overflow-hidden">
+        <i className={`block h-full rounded-sm ${row.barColor} animate-progress`} style={{ width: row.pct }}></i>
+      </div>
+      <span className={`font-mono ${row.isMono11 ? 'text-[11px]' : 'text-[12px]'} font-medium text-text-mid w-12 text-right`}>{row.score}</span>
+      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-xl w-12 flex justify-center ${row.statusBg} ${row.statusText}`}>{row.status}</span>
+    </div>
+  );
+
   return (
-    <div className="w-full bg-white border border-[rgba(29,158,117,0.16)] rounded-2xl shadow-hero overflow-hidden">
+    <div className="w-full bg-white border border-[rgba(29,158,117,0.14)] rounded-2xl shadow-[0_12px_40px_rgba(4,52,44,0.07)] overflow-hidden">
       {/* Title bar */}
-      <div className="bg-ink px-[18px] py-[14px] flex items-center gap-2">
-        <span className="w-[11px] h-[11px] rounded-full bg-[#FF6058] shrink-0"></span>
-        <span className="w-[11px] h-[11px] rounded-full bg-[#FFBE2F] shrink-0"></span>
-        <span className="w-[11px] h-[11px] rounded-full bg-[#28C940] shrink-0"></span>
-        <span className="ml-3.5 font-mono text-[11.5px] text-amber-light">tekki-blaze · health-report</span>
-        <span className="ml-auto flex items-center gap-1.5 text-[11px] text-teal-light font-semibold">
-          <span className="w-[6px] h-[6px] rounded-full bg-amber-base animate-blink"></span> SCAN COMPLETE
+      <div className="bg-ink px-4 py-3 flex items-center gap-1.5">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#FF6058]"></span>
+        <span className="w-2.5 h-2.5 rounded-full bg-[#FFBE2F]"></span>
+        <span className="w-2.5 h-2.5 rounded-full bg-[#28C940]"></span>
+        <span className="ml-3 font-mono text-xs text-amber-light">tekki-blaze · health-report</span>
+        <span className="ml-auto flex items-center gap-1 text-[11px] text-teal-light font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-brand animate-pulse"></span> SCAN COMPLETE
         </span>
       </div>
 
-      <div className="p-[26px] pb-7">
+      <div className="p-6">
         {/* Header */}
-        <div className="flex items-center gap-[18px] mb-[22px]">
-          <div className="w-[88px] h-[88px] rounded-xl bg-gradient-to-br from-teal-deep to-teal-mid flex items-center justify-center shrink-0 shadow-[0_10px_26px_rgba(8,80,65,0.35)]">
+        <div className="flex items-center gap-4 mb-[18px]">
+          <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-teal-deep to-teal-mid flex items-center justify-center shrink-0 shadow-[0_10px_24px_rgba(8,80,65,0.3)]">
             <span className="font-serif font-bold text-[42px] text-white leading-none">A</span>
           </div>
           <div>
-            <div className="text-[11.5px] tracking-[1px] uppercase text-text-soft font-semibold mb-[3px]">Overall Hardware Grade</div>
-            <div className="font-serif text-[21px] font-bold text-ink mb-[2px]">Healthy & Reliable</div>
-            <div className="text-[12.5px] text-text-soft">12 components checked · 0 critical issues</div>
+            <div className="text-xs tracking-wider uppercase text-text-soft font-semibold mb-0.5">Overall Hardware Grade</div>
+            <div className="font-serif text-[21px] font-bold text-ink mb-0.5">Healthy & Reliable</div>
+            <div className="text-[13px] text-text-soft">12 components checked · 0 critical issues</div>
           </div>
         </div>
 
         {/* Device info */}
-        <div className="font-mono text-[11px] text-text-soft bg-off-white border border-[rgba(29,158,117,0.16)] rounded-md px-3 py-2 mb-5 flex justify-between items-center gap-4">
-          <span className="truncate">DELL INSPIRON 15 · i5-1135G7</span>
-          <span className="shrink-0">SCAN #A29F · 2:54</span>
+        <div className="font-mono text-[11px] text-text-soft bg-off-white border border-[rgba(29,158,117,0.14)] rounded-md p-2 flex justify-between mb-4">
+          <span>DELL INSPIRON 15 · i5-1135G7</span>
+          <span>SCAN #A29F · 2:54</span>
         </div>
 
-        {/* Rows */}
-        <div className="flex flex-col">
-          {rows.map((row, i) => (
-            <div key={i} className={`flex items-center gap-3 py-2.5 ${i < rows.length - 1 ? 'border-b border-[rgba(29,158,117,0.16)]' : ''}`}>
-              <span className="w-8 h-8 rounded-lg bg-teal-ghost flex items-center justify-center shrink-0">{row.icon}</span>
-              <span className="text-[13px] font-semibold text-ink w-24 shrink-0 truncate">{row.label}</span>
-              <div className="flex-1 h-2 rounded-sm bg-off-white overflow-hidden min-w-[50px]">
-                <i className={`block h-full rounded-sm ${row.barColor} animate-progress`} style={{ width: row.pct }}></i>
-              </div>
-              <span className="font-mono text-[12px] font-medium text-text-mid w-[54px] text-right shrink-0">{row.score}</span>
-              <span className={`text-[10px] font-bold py-[3px] px-[9px] rounded-full w-16 text-center ${row.statusBg} ${row.statusText} shrink-0`}>
-                {row.status}
-              </span>
-            </div>
-          ))}
+        {/* Scan group */}
+        <div className="flex flex-col gap-[9px]">
+          <div className="text-[10px] tracking-widest uppercase font-black text-teal-mid pt-2 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-base"></span>Scan · your hardware, measured
+          </div>
+          {scanRows.map((row, i) => renderRow(row, i, false))}
+
+          {/* Care group */}
+          <div className="text-[10px] tracking-widest uppercase font-black text-amber-dark pt-2 mt-1.5 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-brand"></span>Care · upkeep & history, decoded
+          </div>
+          {careRows.map((row, i) => renderRow(row, i, i === careRows.length - 1))}
+
+          <div className="text-[11px] text-text-soft pt-2 font-normal border-t border-[rgba(29,158,117,0.14)]">
+            + Device Tests & Error Intelligence — all 12 checks in your full report
+          </div>
         </div>
 
         {/* Footer buttons */}
-        <div className="flex gap-[9px] mt-[16px]">
-          <a href="#demo" className="flex-1 flex items-center justify-center gap-1.5 text-center text-[12.5px] font-bold p-[11px] rounded-[11px] bg-ink text-amber-base hover:bg-black transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0 inline-block align-[-2px]"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            <span>Download PDF</span>
-          </a>
-          <a href="#demo" className="flex-1 text-center text-[12.5px] font-bold p-[11px] rounded-[11px] bg-off-white border border-[rgba(239,159,39,0.3)] text-amber-base hover:bg-[#fcf0dc] transition-colors">
-            Share via WhatsApp
-          </a>
-        </div>
-
-        {/* Verification Banner */}
-        <div className="mt-[12px] bg-teal-ghost text-teal-mid rounded-[10px] px-3 py-[8px] flex items-center justify-center gap-[7px] text-[12px] font-semibold">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8"/><path d="M8 12l2.5 2.5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          Scan ID: A29F · Anyone can verify this report at tekki-x.com/verify
+        <div className="flex gap-2.5 mt-4">
+          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold p-3 rounded-xl bg-ink text-amber-light hover:bg-black transition-colors">↓ Download PDF</a>
+          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold p-3 rounded-xl bg-off-white border border-[rgba(29,158,117,0.14)] text-amber-dark hover:bg-teal-ghost transition-colors">Share via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -134,76 +98,70 @@ export default function Hero() {
   const [isReportOpen, setIsReportOpen] = useState(false);
 
   return (
-    <header className="py-[70px] md:pb-20 bg-[radial-gradient(110%_70%_at_80%_0%,var(--color-teal-ghost),var(--color-off-white)_52%,var(--color-white))] overflow-hidden relative">
-      <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-11 lg:gap-14 items-center relative z-10">
+    <header className="py-[52px] bg-[radial-gradient(110%_70%_at_80%_0%,var(--color-teal-ghost),var(--color-off-white)_52%,#fff)] overflow-hidden relative" id="top">
+      <div className="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-[52px] items-center relative z-10">
         {/* Left */}
         <div className="flex flex-col items-start relative z-10">
           {/* Eyebrow */}
           <Reveal delay={0}>
-            <div className="inline-flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-bold text-text-soft mb-6">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-base"></span>
+            <div className="inline-flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-bold text-text-soft mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-brand shadow-[0_0_0_3px_rgba(239,159,39,0.18)]"></span>
               The Complete Computer Health Platform
             </div>
           </Reveal>
 
           {/* H1 */}
           <Reveal delay={100}>
-            <h1 className="font-inter font-black tracking-[-0.035em] text-[38px] sm:text-[56px] leading-[1.0] mb-5">
+            <h1 className="font-inter font-black tracking-tighter text-[36px] sm:text-[56px] leading-none mb-5">
               <span className="text-ink">One scan.</span><br />
-              <span className="text-[#0e614c]">Every answer.</span><br />
-              <span className="text-amber-base">₹299*</span>
+              <span className="text-teal-mid">Every answer.</span><br />
+              <span className="text-amber-brand" style={{ fontFeatureSettings: '"tnum"', whiteSpace: 'nowrap' }}>₹299</span>
             </h1>
           </Reveal>
 
           <Reveal delay={200}>
-            <p className="text-[17px] text-text-mid mb-[10px] leading-[1.55] max-w-[460px] font-light">
-              A clear, shareable A–F health report for any Windows computer in about three minutes. Every ₹299 includes two scans — one to diagnose, one to confirm your fix.
+            <p className="text-[17px] text-text-mid mb-2.5 leading-relaxed font-light max-w-[460px]">
+              <b>A complete health checkup for your computer — in 3 minutes.</b> One scan grades all 12 parts, benchmarks real speed, clears the junk, and puts an exact price on every upgrade. Then scan #2 proves the fix worked.
             </p>
           </Reveal>
 
-          {/* Features */}
+          {/* Privacy badge */}
           <Reveal delay={300}>
-            <div className="flex flex-col items-start gap-4 mb-4">
-              <div className="inline-flex items-center gap-[7px] bg-teal-ghost text-teal-mid px-[14px] py-[6px] rounded-[30px] border border-border-teal-alpha text-[12.5px] font-semibold">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                Zero cloud retention — your data never leaves your device
-              </div>
-
-              <div className="text-[13px] text-text-soft mb-[18px]">
-                Comparable to a <s className="text-text-soft/70 decoration-text-soft/60">₹2,000</s> professional diagnostic — <b className="text-amber-dark font-bold">two scans for ₹299*</b>
-              </div>
+            <div className="inline-flex items-center gap-2 text-[13px] font-semibold text-teal-mid bg-teal-ghost border border-[rgba(29,158,117,0.14)] rounded-[30px] px-3.5 py-1.5 mb-6">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z" stroke="#0F6E56" strokeWidth="1.7" strokeLinejoin="round"/></svg>
+              Zero cloud retention — your data never leaves your device
             </div>
           </Reveal>
 
           {/* CTA Row */}
           <Reveal delay={400}>
-            <div className="flex flex-wrap items-center gap-[12px] mb-[16px]">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
               <a
-                href="#get"
-                className="inline-flex items-center gap-[10px] bg-amber-base text-ink font-bold text-[15px] px-[26px] py-[14px] rounded-[12px] transition-all duration-150 shadow-[0_8px_24px_rgba(239,159,39,0.28)] hover:-translate-y-[3px] hover:shadow-[0_14px_32px_rgba(239,159,39,0.42)] border-none"
+                href="#pricing"
+                className="animate-cta-pulse inline-flex items-center gap-2.5 bg-amber-brand text-ink font-bold text-[15px] px-6 py-3.5 rounded-xl transition-all shadow-[0_8px_24px_rgba(239,159,39,0.28)] border-none hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(239,159,39,0.42)]"
               >
-                Scan my computer · ₹299*
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                Scan my computer · ₹299
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0D1F1A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
               <button
                 onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-[7px] font-semibold text-[14px] text-text-mid hover:text-amber-dark transition-colors cursor-pointer px-2"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-mid hover:text-amber-dark transition-colors cursor-pointer bg-transparent border-none"
               >
-                Watch a scan &rarr;
+                Watch a scan →
               </button>
             </div>
           </Reveal>
 
-          {/* Mini badges / OS Pills */}
+          {/* OS support */}
           <Reveal delay={500}>
-            <div className="flex flex-col gap-[14px]">
-              <div className="flex items-center gap-[6px] text-[12.5px] text-teal-mid font-semibold mb-[14px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                Second scan credit never expires — fix at your own pace
+            <div className="flex flex-col gap-1.5">
+              <div className="text-[13px] text-text-soft flex items-center gap-1.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                Windows 10 & 11 · Laptops & Desktops
               </div>
-              <div className="flex items-center gap-[6px] text-[12.5px] text-text-soft">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0"><path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span>Windows 10 & 11 · Laptops & Desktops · macOS & Linux <span className="text-amber-dark font-bold underline underline-offset-2 cursor-pointer hover:text-amber-base transition-colors ml-1">Join Waitlist &rarr;</span></span>
+              <div className="text-[13px] text-text-soft flex items-center gap-1.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6A8A80" strokeWidth="1.8"/><path d="M12 7v5l3 2" stroke="#6A8A80" strokeWidth="1.9" strokeLinecap="round"/></svg>
+                Coming soon: macOS & Linux · <span className="text-amber-dark font-bold underline decoration-2 underline-offset-2 cursor-pointer hover:text-amber-brand transition-colors">Join Waitlist →</span>
               </div>
             </div>
           </Reveal>

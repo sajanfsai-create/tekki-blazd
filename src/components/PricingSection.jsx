@@ -3,124 +3,165 @@ import Reveal from './Reveal';
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-24 bg-[#fbfcfc]">
-      <div className="wrap max-w-[1000px]">
-        <div className="text-center mb-[48px]">
+    <section id="pricing" className="py-10 bg-[#fbfcfc]">
+      <div className="wrap max-w-[1200px]">
+        <div className="text-center mb-14">
           <Reveal delay={0}>
-            <div className="text-[11px] tracking-[2px] uppercase font-bold text-amber-dark mb-[12px]">Simple Pricing</div>
-            <h2 className="font-inter font-black tracking-tight text-[36px] md:text-[48px] leading-[1.04] text-ink mb-[20px]">
+            <div className="text-[11px] tracking-[2px] uppercase font-bold text-amber-dark mb-4 flex flex-col items-center">
+              <span>Simple Pricing</span>
+              <div className="w-6 h-[2px] bg-amber-brand mt-2.5 rounded-full"></div>
+            </div>
+            <h2 className="font-inter font-black tracking-tight text-[38px] md:text-[52px] leading-[1.05] text-ink mb-5">
               Two scans.<br /><span className="text-[#0f6e56]">₹299.</span> No subscription.
             </h2>
-            <p className="text-[16px] text-text-mid max-w-[600px] mx-auto leading-[1.6] mb-[32px]">
-              One-time payment. Every ₹299 includes two scans — one to diagnose, one to confirm your fix. No recurring charges, ever.
+            <p className="text-[15.5px] text-text-soft max-w-[680px] mx-auto leading-[1.6]">
+              One payment, inclusive of GST, covers the complete 12-part check twice — find what's wrong, fix it your way, then confirm it's gone. If you don't need the second scan yet, it waits: credits never expire.
             </p>
-            <div className="text-[14.5px] text-text-soft">
-              Comparable to a <span className="line-through opacity-70">₹2,000</span> professional diagnostic — <span className="font-bold text-[#bd6811]">two full scans for ₹299*</span>
-            </div>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] lg:gap-[32px] mb-12">
-          {/* Card 1: Best Value */}
-          <Reveal delay={100}>
-            <div className="relative rounded-[24px] bg-white text-ink p-[32px] lg:p-[40px] flex flex-col h-full shadow-[0_20px_40px_rgba(239,159,39,0.08)] border-[1.5px] border-amber-base transform hover:-translate-y-1 transition-transform duration-300">
+        <Reveal delay={100}>
+          {/* 4 Steps Section */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {/* Step 1 */}
+            <div className="bg-white rounded-2xl p-5 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#eaf7f2] text-[#0f6e56] font-bold flex items-center justify-center shrink-0 text-[13px]">
+                1
+              </div>
+              <div>
+                <h4 className="font-bold text-[14.5px] text-ink mb-1 leading-tight">Pay once</h4>
+                <p className="text-[12.5px] text-text-soft leading-snug">UPI or card · takes a minute</p>
+              </div>
+            </div>
+            {/* Step 2 */}
+            <div className="bg-white rounded-2xl p-5 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#eaf7f2] text-[#0f6e56] font-bold flex items-center justify-center shrink-0 text-[13px]">
+                2
+              </div>
+              <div>
+                <h4 className="font-bold text-[14.5px] text-ink mb-1 leading-tight">Get your download link</h4>
+                <p className="text-[12.5px] text-text-soft leading-snug">Instantly, by email — one small file</p>
+              </div>
+            </div>
+            {/* Step 3 */}
+            <div className="bg-white rounded-2xl p-5 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#eaf7f2] text-[#0f6e56] font-bold flex items-center justify-center shrink-0 text-[13px]">
+                3
+              </div>
+              <div>
+                <h4 className="font-bold text-[14.5px] text-ink mb-1 leading-tight">Run it — no install</h4>
+                <p className="text-[12.5px] text-text-soft leading-snug">Report & PDF certificate in ~3 minutes</p>
+              </div>
+            </div>
+            {/* Step 4 */}
+            <div className="bg-white rounded-2xl p-5 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#eaf7f2] text-[#0f6e56] font-bold flex items-center justify-center shrink-0 text-[13px]">
+                4
+              </div>
+              <div>
+                <h4 className="font-bold text-[14.5px] text-ink mb-1 leading-tight">Fix, then re-scan</h4>
+                <p className="text-[12.5px] text-text-soft leading-snug">Your 2nd credit waits — it never expires</p>
+              </div>
+            </div>
+          </div>
 
-              <div className="absolute top-[24px] right-[24px] bg-amber-base text-ink font-bold text-[11px] tracking-wider uppercase px-[12px] py-[6px] rounded-[12px] shadow-sm">
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8 max-w-[1100px] mx-auto items-stretch">
+            {/* Card 1: Best Value */}
+            <div className="relative rounded-[20px] bg-white p-7 lg:p-9 flex flex-col h-full border border-amber-brand shadow-[0_8px_32px_rgba(239,159,39,0.1)]">
+
+              <div className="absolute top-0 right-6 -translate-y-1/2 bg-amber-brand text-ink font-bold text-[10px] tracking-[1px] uppercase px-3.5 py-1.5 rounded-full shadow-sm">
                 Best value
               </div>
 
-              <div className="mb-[24px]">
-                <h3 className="font-inter font-black text-[22px] mb-[12px]">Scan + Re-Scan</h3>
-                <div className="flex items-start gap-1 mb-[8px]">
-                  <span className="text-[18px] font-bold text-amber-base mt-[6px]">₹</span>
-                  <span className="font-inter font-black text-[46px] tracking-tight leading-none text-ink">299*</span>
+              <div className="mb-6">
+                <h3 className="font-inter font-black text-[18px] mb-2 text-ink">Scan + Re-Scan</h3>
+                <div className="flex items-start mb-2">
+                  <span className="text-[22px] font-bold text-amber-brand mt-1.5 mr-0.5">₹</span>
+                  <span className="font-inter font-black text-[52px] tracking-tight leading-none text-ink">299</span>
                 </div>
-                <div className="text-[13.5px] text-text-soft">2 scan credits · diagnose, then verify your fix</div>
+                <div className="text-[13px] text-text-soft">2 scan credits · diagnose, then verify your fix</div>
               </div>
 
-              <div className="flex flex-col mb-[32px] flex-grow">
+              <div className="flex flex-col mb-8 flex-grow">
                 {[
                   'Two full scans of all 12 hardware checks',
                   'Re-scan to confirm repairs & compare results',
-                  'Hardware Security Lock across both scans',
+                  'Hardware Fingerprint verified across both scans',
                   'Two downloadable A–F PDF certificates',
-                  'Scan ID verifiable at tekki-x.com/verify'
+                  'Benchmarks, Compatibility Matrix & one-click cleanup included'
                 ].map((feat, i) => (
-                  <div key={i} className={`flex items-start gap-[12px] py-[12px] ${i !== 0 ? 'border-t border-[rgba(29,158,117,0.08)]' : 'border-t border-[rgba(29,158,117,0.08)]'}`}>
-                    <div className="mt-[2px] shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF9F27" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 9 10 16 8 13"></polyline></svg>
+                  <div key={i} className={`flex items-start gap-3 py-2 ${i !== 0 ? 'border-t border-[rgba(29,158,117,0.1)]' : ''}`}>
+                    <div className="mt-0.5 shrink-0 text-amber-brand">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 8 10 16 7 13"></polyline></svg>
                     </div>
-                    <span className="text-[14px] text-text-soft leading-[1.5]">{feat}</span>
+                    <span className="text-[13px] text-text-mid leading-[1.5]">{feat}</span>
                   </div>
                 ))}
               </div>
 
-              <button className="w-full bg-amber-base text-ink font-bold text-[15px] py-[16px] rounded-[12px] hover:bg-amber-light transition-colors duration-200">
-                Get 2 scans · ₹299*
+              <button className="w-full flex items-center justify-center gap-2 bg-amber-brand text-ink font-bold text-[14.5px] py-3.5 rounded-xl hover:bg-amber-light transition-colors duration-200 shadow-[0_4px_12px_rgba(239,159,39,0.2)]">
+                Get my 2 scans
               </button>
             </div>
-          </Reveal>
 
-          {/* Card 2: Household Pack */}
-          <Reveal delay={200}>
-            <div className="relative rounded-[24px] bg-white border border-[rgba(29,158,117,0.15)] text-ink p-[32px] lg:p-[40px] flex flex-col h-full shadow-[0_8px_24px_rgba(4,52,44,0.04)] transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(4,52,44,0.08)] hover:border-[rgba(29,158,117,0.3)] transition-all duration-300">
+            {/* Card 2: Household Pack */}
+            <div className="relative rounded-[20px] bg-white p-7 lg:p-9 flex flex-col h-full border border-[rgba(29,158,117,0.15)] shadow-[0_4px_24px_rgba(4,52,44,0.03)]">
 
-              <div className="mb-[24px]">
-                <h3 className="font-inter font-black text-[22px] mb-[12px]">Household Pack</h3>
-                <div className="flex items-start gap-1 mb-[8px]">
-                  <span className="text-[18px] font-bold text-amber-base mt-[6px]">₹</span>
-                  <span className="font-inter font-black text-[46px] tracking-tight leading-none text-ink">699*</span>
+              <div className="mb-6">
+                <h3 className="font-inter font-black text-[18px] mb-2 text-ink">Household Pack</h3>
+                <div className="flex items-start mb-2">
+                  <span className="text-[22px] font-bold text-amber-brand mt-1.5 mr-0.5">₹</span>
+                  <span className="font-inter font-black text-[52px] tracking-tight leading-none text-ink">699</span>
                 </div>
-                <div className="text-[13.5px] text-text-soft">6 scan credits · cover up to 3 computers</div>
+                <div className="text-[13px] text-text-soft">6 scan credits · cover up to 3 computers</div>
               </div>
 
-              <div className="bg-[#eaf7f2] rounded-[8px] p-[12px] flex items-center gap-[10px] mb-[24px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                <span className="text-[13px] font-bold text-[#0F6E56] leading-[1.4]">Credits never expire — use them when you need them</span>
+              <div className="bg-[#eaf7f2] rounded-[10px] p-3 flex items-center gap-2.5 mb-6">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span className="text-[12.5px] font-bold text-[#0F6E56] leading-[1.4]">Credits never expire — use them when you need them</span>
               </div>
 
-              <div className="flex flex-col mb-[32px] flex-grow">
+              <div className="flex flex-col mb-8 flex-grow">
                 {[
                   'Everything in Scan + Re-Scan, ×3',
                   'Mix across machines — best per-scan price',
                   'Pre-pay for a future moment of need — no new purchase decision each time',
                   'Priority email support'
                 ].map((feat, i) => (
-                  <div key={i} className={`flex items-start gap-[12px] py-[12px] ${i !== 0 ? 'border-t border-[rgba(29,158,117,0.08)]' : ''}`}>
-                    <div className="mt-[2px] shrink-0">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF9F27" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 9 10 16 8 13"></polyline></svg>
+                  <div key={i} className={`flex items-start gap-3 py-2 ${i !== 0 ? 'border-t border-[rgba(29,158,117,0.1)]' : ''}`}>
+                    <div className="mt-0.5 shrink-0 text-amber-brand">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 8 10 16 7 13"></polyline></svg>
                     </div>
-                    <span className="text-[14px] text-text-soft leading-[1.5]">{feat}</span>
+                    <span className="text-[13px] text-text-mid leading-[1.5]">{feat}</span>
                   </div>
                 ))}
               </div>
 
-              <button className="w-full bg-white border border-amber-base text-ink font-bold text-[15px] py-[16px] rounded-[12px] hover:bg-[rgba(239,159,39,0.05)] transition-colors duration-200">
-                Buy Household Pack · ₹699*
+              <button className="w-full flex items-center justify-center gap-2 bg-white border border-amber-brand text-ink font-bold text-[14.5px] py-3.5 rounded-xl hover:bg-[rgba(239,159,39,0.05)] transition-colors duration-200">
+                Buy Household Pack &rarr;
               </button>
             </div>
-          </Reveal>
-        </div>
+          </div>
 
-        {/* Footer text */}
-        <Reveal delay={300}>
+          {/* Footer text */}
           <div className="text-center mb-16">
-            <p className="text-[14px] text-text-soft">
-              One-time payment · UPI / card · no subscription, ever. <br className="sm:hidden" />*Plus applicable GST at checkout.
+            <p className="text-[12.5px] text-text-soft">
+              One-time payment · UPI / card · no subscription, ever. All prices inclusive of GST.
             </p>
           </div>
-
-          {/* Partner Banner */}
-          <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-[20px] p-[28px] md:p-[32px] flex flex-col items-start shadow-[0_4px_24px_rgba(4,52,44,0.03)]">
-            <div className="text-[15px] leading-[1.6] mb-[20px]">
-              <span className="font-inter font-black text-ink">Are you a repair shop, IT reseller, or refurbisher?</span>
-              <span className="text-text-soft ml-1">Partner tools live on a dedicated page — bulk licensing, repair leads, and lifecycle certification.</span>
-            </div>
-            <a href="/tekkiblaze-partners" className="whitespace-nowrap font-bold text-[14px] text-amber-dark bg-white border border-[rgba(29,158,117,0.15)] px-[24px] py-[12px] rounded-[10px] shadow-sm hover:border-[rgba(29,158,117,0.3)] hover:bg-[#fbfcfc] transition-all">
-              Launching Soon &rarr;
-            </a>
-          </div>
         </Reveal>
+
+        {/* Partner Banner */}
+        <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-[20px] p-[28px] md:p-[32px] flex flex-col items-start shadow-[0_4px_24px_rgba(4,52,44,0.03)]">
+          <div className="text-[15px] leading-[1.6] mb-[20px]">
+            <span className="font-inter font-black text-ink">Are you a repair shop, IT reseller, or refurbisher?</span>
+            <span className="text-text-soft ml-1">Partner tools live on a dedicated page — bulk licensing, repair leads, and lifecycle certification.</span>
+          </div>
+          <a href="/tekkiblaze-partners" className="whitespace-nowrap font-bold text-[14px] text-amber-dark bg-white border border-[rgba(29,158,117,0.15)] px-[24px] py-[12px] rounded-[10px] shadow-sm hover:border-[rgba(29,158,117,0.3)] hover:bg-[#fbfcfc] transition-all">
+            Become a Partner &rarr;
+          </a>
+        </div>
       </div>
     </section>
   )

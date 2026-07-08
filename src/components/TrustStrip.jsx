@@ -1,63 +1,55 @@
 export default function TrustStrip() {
-  const stats = [
-    { num: '12-point', label: 'system check' },
-    { num: '3-min', label: 'diagnostics' },
-    { num: 'A–F', label: 'certified report' },
-    { num: 'Zero', label: 'cloud retention' },
-  ]
-
   return (
-    <div className="border-t border-b border-[rgba(29,158,117,0.16)] bg-white py-[16px] md:py-[20px]">
-      <div className="wrap flex flex-col items-center">
-        <div className="flex flex-wrap justify-center items-center gap-x-[24px] gap-y-[12px] md:gap-x-[32px] text-[13px] md:text-[14px]">
+    <div className="bg-white border-y border-[rgba(29,158,117,0.14)]">
+      <div className="wrap flex items-center justify-center flex-wrap gap-y-2 py-3.5 px-4">
 
-          <div className="flex items-center gap-[6px]">
-            <span className="text-[#bd6811]">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="12" cy="12" r="2"></circle></svg>
-            </span>
-            <span className="font-bold text-[#bd6811]">12-point</span>
-            <span className="text-[#0d523c]">system check</span>
-          </div>
+        <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mid px-2.5 sm:px-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#EF9F27" strokeWidth="1.8"/><rect x="9" y="9" width="6" height="6" fill="#EF9F27"/></svg>
+          <span className="font-inter font-black text-amber-dark">12-point</span> system check
+        </span>
 
-          <div className="flex items-center gap-[6px]">
-            <span className="text-[#bd6811]">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            </span>
-            <span className="font-bold text-[#bd6811]">3-min</span>
-            <span className="text-[#0d523c]">diagnostics</span>
-          </div>
+        <span className="hidden sm:block w-px h-4 bg-[rgba(29,158,117,0.14)] shrink-0"></span>
 
-          <div className="hidden md:block w-px h-[14px] bg-[rgba(29,158,117,0.2)]"></div>
+        <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mid px-2.5 sm:px-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#EF9F27" strokeWidth="1.8"/><path d="M12 7v5l3 2" stroke="#EF9F27" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <span className="font-inter font-black text-amber-dark">3-min</span> diagnostics
+        </span>
 
-          <div className="flex items-center gap-[6px]">
-            <span className="text-[#bd6811]">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-            </span>
-            <span className="font-bold text-[#bd6811]">A–F</span>
-            <span className="text-[#0d523c]">certified report</span>
-          </div>
+        <span className="hidden sm:block w-px h-4 bg-[rgba(29,158,117,0.14)] shrink-0"></span>
 
-          <div className="flex items-center gap-[6px]">
-            <span className="text-[#bd6811]">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </span>
-            <span className="font-bold text-[#bd6811]">Zero</span>
-            <span className="text-[#0d523c]">cloud retention</span>
-          </div>
+        <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mid px-2.5 sm:px-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 3h8l5 5v11a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#EF9F27" strokeWidth="1.7" strokeLinejoin="round"/><path d="M14 3v5h5" stroke="#EF9F27" strokeWidth="1.7"/></svg>
+          <span className="font-inter font-black text-amber-dark">A–F</span> certified report
+        </span>
 
-          <div className="hidden md:block w-px h-[14px] bg-[rgba(29,158,117,0.2)]"></div>
+        <span className="hidden sm:block w-px h-4 bg-[rgba(29,158,117,0.14)] shrink-0"></span>
 
-          <div className="flex items-center gap-[6px]">
-            <span className="text-amber-base tracking-widest text-[12px] -mt-[2px]">★★★★★</span>
-            <span className="font-bold text-ink">4.9</span>
-            <span className="text-text-soft">· 3,200+ scans in Bengaluru</span>
-          </div>
+        <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-mid px-2.5 sm:px-4">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z" stroke="#EF9F27" strokeWidth="1.7" strokeLinejoin="round"/></svg>
+          <span className="font-inter font-black text-amber-dark">Zero</span> cloud retention
+        </span>
 
-        </div>
+        <span className="hidden sm:block w-px h-4 bg-[rgba(29,158,117,0.14)] shrink-0"></span>
 
-        <a href="#privacy" className="mt-[16px] text-[13px] font-bold text-[#0f6e56] underline underline-offset-4 decoration-[#0f6e56]/40 hover:decoration-[#0f6e56] transition-all">
-          Privacy & compliance &rarr;
+        <a
+          className="inline-flex items-center gap-1.5 px-2.5 sm:px-4 text-[13px] text-text-mid hover:text-text-soft transition-colors"
+          href="https://www.google.com/maps/search/Tekki+Blaze+Indiranagar+Bengaluru"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="text-amber-brand tracking-wide">★</span>
+          <span>Reviews on Google →</span>
         </a>
+
+        <span className="hidden sm:block w-px h-4 bg-[rgba(29,158,117,0.14)] shrink-0"></span>
+
+        <button
+          type="button"
+          className="bg-transparent border-none cursor-pointer font-sans text-[13px] font-bold text-teal-mid underline underline-offset-2 px-2.5 sm:px-4 hover:text-teal-dark transition-colors"
+        >
+          Privacy & compliance →
+        </button>
+
       </div>
     </div>
   )

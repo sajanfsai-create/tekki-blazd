@@ -14,9 +14,11 @@
   
   --color-amber: #EF9F27;
   --color-amber-base: #EF9F27;
+  --color-amber-brand: #EF9F27;
   --color-amber-dark: #BA7517;
   --color-amber-light: #FAC775;
   --color-amber-soft: #FBF1DF;
+  --color-amber-ghost: #FCF3E1;
   --color-gold: #FFBF00;
   
   --color-grade-a: #085041;
@@ -26,11 +28,19 @@
   --color-grade-f: #C8472E;
   
   --color-ink: #0D1F1A;
-  --color-text-mid: #2E5049;
-  --color-text-soft: #5A8070;
-  --color-off-white: #F4F8F6;
+  --color-text-mid: #3A5A52;
+  --color-text-soft: #6A8A80;
+  --color-off-white: #F5F8F7;
   --color-canvas: #F7F9F8;
   --color-hairline: #E6ECEA;
+
+  /* New colors from updated design */
+  --color-forest: #063A30;
+  --color-forest-deep: #04231D;
+  --color-forest-ink: #03251F;
+  --color-alert-red: #C8472E;
+  --color-mint-text: #DCF1E8;
+  --color-bronze: #BA7517;
 
   /* Typography sets */
   --font-serif: 'Playfair Display', serif;
@@ -55,9 +65,19 @@
   @keyframes fillProgress {
     from { width: 0; }
   }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(239,159,39,.28); }
+    50% { box-shadow: 0 10px 34px rgba(239,159,39,.5); }
+  }
+  @keyframes expfill {
+    from { width: 0; }
+    to { width: 100%; }
+  }
   
   --animate-blink: blink 1.6s infinite;
   --animate-progress: fillProgress 1.4s ease-out forwards;
+  --animate-cta-pulse: ctaPulse 2.8s ease-in-out infinite;
+  --animate-exp-fill: expfill 5200ms linear forwards;
 }
 
 /* Layout Component Shortcuts mimicking your custom wrappers */
@@ -76,4 +96,13 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+/* Explorer progress bar animation */
+@keyframes progress-slow {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+.animate-progress-slow {
+  animation: progress-slow linear infinite;
 }
