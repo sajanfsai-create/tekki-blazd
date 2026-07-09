@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import Reveal from './Reveal';
 
 export default function FAQSection() {
-  const [openIndices, setOpenIndices] = useState(new Set([0, 1, 2, 3, 4, 5, 6, 7, 8]));
+  const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    setOpenIndices(prev => {
-      const next = new Set(prev);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
-      return next;
-    });
+    setOpenIndex(prev => prev === index ? null : index);
   };
 
   const faqs = [
@@ -199,7 +194,7 @@ export default function FAQSection() {
 
   return (
     <section className="py-24 bg-white" id="faq">
-      <div className="wrap max-w-[840px]">
+      <div className="wrap max-w-[1140px]">
 
         {/* Header matching inspiration image exactly */}
         <div className="text-center mb-[48px]">
@@ -218,44 +213,90 @@ export default function FAQSection() {
           </Reveal>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndices.has(index);
-            return (
-              <Reveal delay={100 + (index * 50)} key={index}>
-                <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(4,52,44,0.02)] transition-shadow hover:shadow-[0_4px_16px_rgba(4,52,44,0.04)]">
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 outline-none transition-all duration-300 bg-transparent"
-                  >
-                    <div className="flex items-center gap-4 md:gap-5">
-                      <div className="w-[38px] h-[38px] md:w-[42px] md:h-[42px] rounded-xl bg-[#eaf7f2] text-[#0f6e56] flex items-center justify-center shrink-0">
-                        {faq.icon}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Left Column */}
+          <div className="space-y-4">
+            {faqs.filter((_, i) => i % 2 === 0).map((faq) => {
+              const originalIndex = faqs.indexOf(faq);
+              const isOpen = openIndex === originalIndex;
+              return (
+                <Reveal delay={100 + (originalIndex * 50)} key={originalIndex}>
+                  <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(4,52,44,0.02)] transition-shadow hover:shadow-[0_4px_16px_rgba(4,52,44,0.04)]">
+                    <button
+                      onClick={() => toggleAccordion(originalIndex)}
+                      className="w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 outline-none transition-all duration-300 bg-transparent"
+                    >
+                      <div className="flex items-center gap-4 md:gap-5">
+                        <div className="w-[38px] h-[38px] md:w-[42px] md:h-[42px] rounded-xl bg-[#eaf7f2] text-[#0f6e56] flex items-center justify-center shrink-0">
+                          {faq.icon}
+                        </div>
+                        <h3 className="font-inter font-bold text-[15px] md:text-[16px] text-ink">
+                          {faq.q}
+                        </h3>
                       </div>
-                      <h3 className="font-inter font-bold text-[16px] md:text-[17px] text-ink">
-                        {faq.q}
-                      </h3>
-                    </div>
-                    <div className="w-[26px] h-[26px] rounded-full bg-amber-base flex items-center justify-center shrink-0 shadow-sm text-ink font-bold">
-                      {isOpen ? (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                      ) : (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                      )}
-                    </div>
-                  </button>
+                      <div className="w-[26px] h-[26px] rounded-full bg-amber-base flex items-center justify-center shrink-0 shadow-sm text-ink font-bold">
+                        {isOpen ? (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        ) : (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        )}
+                      </div>
+                    </button>
 
-                  <div
-                    className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] pb-8 pt-2 opacity-100' : 'max-h-0 pb-0 pt-0 opacity-0'}`}
-                  >
-                    <div className="pl-0 md:pl-[62px]">
-                      {faq.a}
+                    <div
+                      className={`px-6 md:px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] pb-6 pt-2 opacity-100' : 'max-h-0 pb-0 pt-0 opacity-0'}`}
+                    >
+                      <div className="pl-0 md:pl-[58px]">
+                        {faq.a}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Reveal>
-            );
-          })}
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-4">
+            {faqs.filter((_, i) => i % 2 === 1).map((faq) => {
+              const originalIndex = faqs.indexOf(faq);
+              const isOpen = openIndex === originalIndex;
+              return (
+                <Reveal delay={100 + (originalIndex * 50)} key={originalIndex}>
+                  <div className="bg-white border border-[rgba(29,158,117,0.15)] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(4,52,44,0.02)] transition-shadow hover:shadow-[0_4px_16px_rgba(4,52,44,0.04)]">
+                    <button
+                      onClick={() => toggleAccordion(originalIndex)}
+                      className="w-full text-left px-5 md:px-6 py-4 flex items-center justify-between gap-4 outline-none transition-all duration-300 bg-transparent"
+                    >
+                      <div className="flex items-center gap-4 md:gap-5">
+                        <div className="w-[38px] h-[38px] md:w-[42px] md:h-[42px] rounded-xl bg-[#eaf7f2] text-[#0f6e56] flex items-center justify-center shrink-0">
+                          {faq.icon}
+                        </div>
+                        <h3 className="font-inter font-bold text-[15px] md:text-[16px] text-ink">
+                          {faq.q}
+                        </h3>
+                      </div>
+                      <div className="w-[26px] h-[26px] rounded-full bg-amber-base flex items-center justify-center shrink-0 shadow-sm text-ink font-bold">
+                        {isOpen ? (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        ) : (
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        )}
+                      </div>
+                    </button>
+
+                    <div
+                      className={`px-6 md:px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] pb-6 pt-2 opacity-100' : 'max-h-0 pb-0 pt-0 opacity-0'}`}
+                    >
+                      <div className="pl-0 md:pl-[58px]">
+                        {faq.a}
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

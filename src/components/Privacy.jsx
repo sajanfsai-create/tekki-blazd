@@ -5,12 +5,12 @@ export default function Privacy() {
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-18">
           <a href="/" className="flex items-center gap-3 no-underline">
             <svg className="w-9 h-9 rounded-2xl flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56"/>
-              <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35"/>
-              <circle cx="50" cy="50" r="9" fill="#FFBF00"/>
+              <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56" />
+              <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
+              <circle cx="50" cy="50" r="9" fill="#FFBF00" />
             </svg>
             <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">X</span></span>
-            <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span>
+            {/* <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span> */}
           </a>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
@@ -18,6 +18,7 @@ export default function Privacy() {
               <a href="/terms" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Terms</a>
               <a href="/refund" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Refund</a>
               <a href="/help" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Help &amp; FAQ</a>
+              <a href="/contact" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Contact</a>
             </div>
             <a href="/#get" className="bg-amber-500 hover:bg-amber-400 transition-colors text-emerald-950 font-bold text-xs px-4.5 py-2.5 rounded-lg no-underline">Get Tekki Blaze</a>
           </div>
@@ -29,7 +30,7 @@ export default function Privacy() {
           <div className="text-xs text-emerald-700/60 mb-3.5 tracking-wide"><a href="/" className="text-emerald-700 hover:underline">Home</a> › Privacy Policy</div>
           <h1 className="font-black tracking-tight text-4xl text-emerald-950 mb-2.5 font-inter">Privacy Policy</h1>
           <p className="text-base text-emerald-800 max-w-2xl">How Tekki Blaze collects, uses and protects your information — written in line with India's Digital Personal Data Protection Act, 2023 and the IT Act, 2000.</p>
-          
+
           <div className="mt-4.5 flex flex-wrap gap-2.5">
             <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-950/10 rounded-full px-3.5 py-1.5">Last updated: 24 June 2026</span>
             <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-950/10 rounded-full px-3.5 py-1.5">Applies to: tekki-x.com &amp; Tekki Blaze app</span>
@@ -44,7 +45,7 @@ export default function Privacy() {
 
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-12 py-12 md:pb-24">
-          
+
           <aside className="md:sticky md:top-24 self-start border border-emerald-950/10 rounded-xl p-5 bg-emerald-50/30">
             <h4 className="text-[11px] tracking-[2px] uppercase text-emerald-600 font-extrabold mb-3">On this page</h4>
             <nav className="flex flex-col space-y-1">
@@ -67,7 +68,7 @@ export default function Privacy() {
           </aside>
 
           <main className="space-y-10 text-[15px] text-emerald-900/90 leading-relaxed">
-            
+
             <section id="p1" className="scroll-mt-24">
               <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">1. Introduction</h2>
               <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Bengaluru Urban, Karnataka – 560038, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
@@ -78,7 +79,7 @@ export default function Privacy() {
             <section id="p2" className="scroll-mt-24">
               <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">2. Data we collect</h2>
               <p className="mb-4">We practise <strong>data minimisation</strong> — we collect only what is needed to deliver your hardware health report.</p>
-              
+
               <h3 className="text-base font-bold text-emerald-950 mt-5 mb-2">a. Hardware &amp; system information (the core of the scan)</h3>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Component identifiers and health metrics: CPU, GPU, RAM, storage (SSD/HDD) SMART data, battery wear, motherboard/BIOS details, network adapters.</li>
@@ -192,7 +193,7 @@ export default function Privacy() {
             <section id="p14" className="scroll-mt-24">
               <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">14. Grievance Officer</h2>
               <p className="mb-4">In accordance with the Information Technology Act, 2000, the Consumer Protection (E‑Commerce) Rules, 2020 and the Digital Personal Data Protection Act, 2023, our Grievance Officer is:</p>
-              
+
               <div className="overflow-x-auto rounded-lg border border-emerald-950/10">
                 <table className="w-full border-collapse text-sm text-left">
                   <thead>
@@ -242,9 +243,9 @@ export default function Privacy() {
           <div className="flex flex-wrap justify-between gap-6 mb-8">
             <a href="/" className="flex items-center gap-3 no-underline">
               <svg className="w-9 h-9 rounded-2xl flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56"/>
-                <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35"/>
-                <circle cx="50" cy="50" r="9" fill="#FFBF00"/>
+                <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56" />
+                <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
+                <circle cx="50" cy="50" r="9" fill="#FFBF00" />
               </svg>
               <span className="font-serif font-bold text-xl text-white leading-none">Tekki <span className="text-amber-500">X</span></span>
               <span className="text-[10px] tracking-[3px] font-bold text-emerald-400 uppercase border-l border-emerald-500/20 pl-2.5">Blaze</span>

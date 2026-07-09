@@ -79,7 +79,6 @@ export default function Nav() {
             Tekki
             <span className="text-amber-brand pl-1.5">X</span>
           </span>
-          {/* <span className="text-[10px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-[rgba(29,158,117,0.14)] pl-2.5">Blaze</span> */}
         </a>
 
         {/* Desktop Nav Links */}

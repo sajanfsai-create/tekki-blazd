@@ -10,7 +10,7 @@ export default function Terms() {
               <circle cx="50" cy="50" r="9" fill="#FFBF00" />
             </svg>
             <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">X</span></span>
-            <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span>
+            {/* <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span> */}
           </a>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
@@ -18,6 +18,7 @@ export default function Terms() {
               <a href="/terms" className="text-sm font-bold text-emerald-700 hover:underline">Terms</a>
               <a href="/refund" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Refund</a>
               <a href="/help" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Help &amp; FAQ</a>
+              <a href="/contact" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Contact</a>
             </div>
             <a href="/#get" className="bg-amber-500 hover:bg-amber-400 transition-colors text-emerald-950 font-bold text-xs px-4.5 py-2.5 rounded-lg no-underline">Get Tekki Blaze</a>
           </div>
@@ -120,7 +121,7 @@ export default function Terms() {
               <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">7. Pricing, GST &amp; payment</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Prices are displayed in Indian Rupees (₹) and are <strong>exclusive of GST</strong> unless stated otherwise; applicable GST is added at checkout.</li>
-                <li>The standard price is <strong>₹299 per scan</strong>, with multi-scan packs (e.g. 3-pack ₹499, 5-pack ₹749) and bulk/partner pricing as published or separately agreed.</li>
+                <li>The standard price is <strong>₹299 for 2 scan credits</strong> (Scan + Re-Scan), with a Household Pack (6 credits for ₹699) and bulk/partner pricing as published or separately agreed.</li>
                 <li>Payment is collected through a third-party payment gateway. You agree to provide accurate billing details. A GST-compliant invoice will be made available for each purchase.</li>
                 <li>We may revise prices prospectively; changes will not affect scans already purchased.</li>
               </ul>

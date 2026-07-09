@@ -10,7 +10,7 @@ export default function Help() {
               <circle cx="50" cy="50" r="9" fill="#FFBF00" />
             </svg>
             <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">X</span></span>
-            <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span>
+            {/* <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span> */}
           </a>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
@@ -18,6 +18,7 @@ export default function Help() {
               <a href="/terms" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Terms</a>
               <a href="/refund" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Refund</a>
               <a href="/help" className="text-sm font-bold text-emerald-700 hover:underline">Help &amp; FAQ</a>
+              <a href="/contact" className="text-sm font-medium text-emerald-800/80 hover:text-emerald-700 hover:underline">Contact</a>
             </div>
             <a href="/#get" className="bg-amber-500 hover:bg-amber-400 transition-colors text-emerald-950 font-bold text-xs px-4.5 py-2.5 rounded-lg no-underline">Get Tekki Blaze</a>
           </div>
@@ -170,7 +171,7 @@ export default function Help() {
               <span className="w-5.5 h-5.5 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-base flex-shrink-0 transition-transform duration-200 group-open:rotate-45 group-open:bg-amber-500 group-open:text-emerald-950">+</span>
             </summary>
             <div className="px-4.5 pb-5 text-[14.5px] text-emerald-900/80">
-              <p><strong>₹299 per scan</strong> (plus GST), with no subscription. Value packs are available — <strong>3-pack ₹499</strong> and <strong>5-pack ₹749</strong> — and bulk pricing for repair shops and businesses.</p>
+              <p><strong>₹299 for 2 scan credits</strong> (Scan + Re-Scan, plus GST), with no subscription. A <strong>Household Pack (6 credits for ₹699)</strong> is available, along with bulk pricing for repair shops and businesses.</p>
             </div>
           </details>
 

@@ -44,7 +44,7 @@ export default function Footer() {
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Demo Video</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Sample Report</a>
             <a href="/help" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Help & FAQ</a>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Contact</a>
+            <a href="/contact" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Contact</a>
           </div>
 
           {/* Column 3 */}

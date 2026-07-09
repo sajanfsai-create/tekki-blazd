@@ -128,7 +128,7 @@ export default function Hero() {
           {/* Privacy badge */}
           <Reveal delay={300}>
             <div className="inline-flex items-center gap-2 text-[13px] font-semibold text-teal-mid bg-teal-ghost border border-[rgba(29,158,117,0.14)] rounded-[30px] px-3.5 py-1.5 mb-6">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z" stroke="#0F6E56" strokeWidth="1.7" strokeLinejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z" stroke="#0F6E56" strokeWidth="1.7" strokeLinejoin="round" /></svg>
               Zero cloud retention — your data never leaves your device
             </div>
           </Reveal>
@@ -141,7 +141,7 @@ export default function Hero() {
                 className="animate-cta-pulse inline-flex items-center gap-2.5 bg-amber-brand text-ink font-bold text-[15px] px-6 py-3.5 rounded-xl transition-all shadow-[0_8px_24px_rgba(239,159,39,0.28)] border-none hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(239,159,39,0.42)]"
               >
                 Scan my computer · ₹299
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0D1F1A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0D1F1A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
               <button
                 onClick={() => setIsVideoOpen(true)}
@@ -156,11 +156,11 @@ export default function Hero() {
           <Reveal delay={500}>
             <div className="flex flex-col gap-1.5">
               <div className="text-[13px] text-text-soft flex items-center gap-1.5">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Windows 10 & 11 · Laptops & Desktops
               </div>
               <div className="text-[13px] text-text-soft flex items-center gap-1.5">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6A8A80" strokeWidth="1.8"/><path d="M12 7v5l3 2" stroke="#6A8A80" strokeWidth="1.9" strokeLinecap="round"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6A8A80" strokeWidth="1.8" /><path d="M12 7v5l3 2" stroke="#6A8A80" strokeWidth="1.9" strokeLinecap="round" /></svg>
                 Coming soon: macOS & Linux · <span className="text-amber-dark font-bold underline decoration-2 underline-offset-2 cursor-pointer hover:text-amber-brand transition-colors">Join Waitlist →</span>
               </div>
             </div>
