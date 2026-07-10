@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 /* ── tiny SVG helpers ── */
 const CheckCircle = ({ color = '#FAC775' }) => (
@@ -24,7 +25,7 @@ const TRACKS = [
     bullets: [
       'Do more business — faster diagnostics mean more machines serviced every day',
       'Build credentials — every repair closes with a verifiable, tamper-evident certificate',
-      'Earn lasting trust — the Tekki-verified badge signals professional, transparent standards',
+      'Earn lasting trust — the Tekki X-verified badge signals professional, transparent standards',
     ],
     gstNote: 'GST optional — register with just mobile & email',
     gstBadgeCls: 'bg-teal-ghost text-teal-mid',
@@ -538,11 +539,7 @@ export default function TekkiBlazePartners() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-hairline py-5.5 text-center text-xs text-text-soft">
-        <div className="max-w-[1020px] mx-auto px-6">
-          © 2026 Tekki-X · <Link to="/" className="text-teal-mid font-semibold">tekki-x.com</Link> · <a href="mailto:partners@tekki-x.com" className="text-teal-mid font-semibold">partners@tekki-x.com</a> &nbsp;·&nbsp; <Link to="/privacy">Privacy Policy</Link> · <Link to="/terms">Terms of Service</Link> · <Link to="/data-protection">Data Protection</Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

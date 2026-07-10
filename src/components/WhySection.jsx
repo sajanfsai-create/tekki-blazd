@@ -116,9 +116,13 @@ function PanelTheft() {
             </div>
           )}
 
-          {run === 1 && (
-            <div className="mt-3.5 text-center text-xs font-bold text-amber-light">▶ Flip to "Run 2" to see how re-verification keeps you informed.</div>
-          )}
+          <div className="mt-3.5 text-center text-xs font-bold text-amber-light min-h-[20px]">
+            {run === 1 ? (
+              <span className="animate-[fadeIn_0.3s_ease-out]">▶ Flip to "Run 2" to see how re-verification keeps you informed.</span>
+            ) : (
+              <span className="animate-[fadeIn_0.3s_ease-out]">◀ Back to "Run 1" to compare against the recorded baseline.</span>
+            )}
+          </div>
         </div>
       </div>
       <ul className="list-none flex flex-col gap-2 mb-3">
@@ -182,7 +186,7 @@ function PanelCert() {
               <span className="font-serif font-bold text-2xl text-white">A</span>
             </div>
             <div>
-              <div className="text-xs font-black text-ink mb-0.5">Hardware Health Certificate</div>
+              <div className="text-xs font-black text-ink mb-0.5">Tekki Blaze Health Certificate</div>
               <div className="text-xs text-text-soft">DELL INSPIRON 15 · Scan #A29F</div>
             </div>
           </div>
@@ -191,7 +195,7 @@ function PanelCert() {
           <div className="h-2 rounded-sm bg-off-white mb-2.5 w-[55%]"></div>
           <div className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-black text-teal-mid border border-dashed border-teal-base rounded-xl px-3 py-1.5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#0F6E56" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="12" r="9" stroke="#0F6E56" strokeWidth="1.6" /></svg>
-            Tekki-verified · shareable PDF
+            Verified by Tekki X · shareable PDF
           </div>
         </div>
       </div>

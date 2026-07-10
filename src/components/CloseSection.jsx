@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Reveal from './Reveal';
+import Modal from './Modal';
+import VideoModal from './VideoModal';
 
 export default function CloseSection() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   return (
     <section
       className="bg-[#0b1714] text-white relative overflow-hidden flex flex-col items-center justify-center px-4 py-24 md:py-16"
@@ -25,6 +28,7 @@ export default function CloseSection() {
               Scan my computer · ₹299
             </button>
             <button
+              onClick={() => setIsVideoOpen(true)}
               className="w-full sm:w-auto bg-transparent border border-white/20 text-white font-bold text-[15px] md:text-[16px] px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/5 hover:border-white/30 hover:-translate-y-0.5"
             >
               Watch a scan &rarr;
@@ -32,6 +36,10 @@ export default function CloseSection() {
           </div>
         </Reveal>
       </div>
+
+      <Modal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)}>
+        <VideoModal />
+      </Modal>
     </section>
   )
 }

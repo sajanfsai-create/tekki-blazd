@@ -8,7 +8,7 @@ export default function Nav() {
 
   const navLinks = [
     { id: 'journey', label: 'How It Works' },
-    { id: 'why', label: 'Why Blaze' },
+    { id: 'why', label: 'Why Tekki Blaze' },
     { id: 'checks', label: "What's Checked" },
     { id: 'pricing', label: 'Pricing' },
     { id: 'faq', label: 'FAQ' },
@@ -62,10 +62,10 @@ export default function Nav() {
     <nav className="sticky top-0 z-[100] bg-white/88 backdrop-blur-[14px] border-b border-[rgba(29,158,117,0.14)] relative">
 
       {/* Scroll Progress Bar container (100% width) */}
-      <div className="absolute bottom-[-1px] left-0 h-[2px] w-full z-10 pointer-events-none">
+      <div className="absolute bottom-0 left-0 h-[2px] w-full z-[110] pointer-events-none">
         {/* The actual extending bar */}
         <div
-          className="h-full bg-gradient-to-r from-teal-base to-amber-brand transition-all duration-100 ease-linear"
+          className="h-full bg-gradient-to-r from-[#1D9E75] to-[#EF9F27] scroll-progress"
           style={{ width: `${scrollProgress}%` }}
         ></div>
       </div>

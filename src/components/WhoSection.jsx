@@ -6,14 +6,14 @@ export default function WhoSection() {
       label: 'Homes & Families',
       title: 'Slow, noisy, shutting down — repair or replace?',
       quote: '"Before you spend ₹60,000 on a new laptop, spend ₹299 to see what\'s actually wrong."',
-      desc: 'Most "dying" PCs just need one small fix. Blaze names the exact part that needs attention and what it should cost — and after any service, a re-scan gives you a dated record that everything is back in shape.',
+      desc: 'Most "dying" PCs just need one small fix. Tekki Blaze names the exact part that needs attention and what it should cost — and after any service, a re-scan gives you a dated record that everything is back in shape.',
       icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
     },
     {
       label: 'Students & Freshers',
       title: 'Laptops die during exams. Never during holidays.',
       quote: '"A blue screen the night before submission never comes out of nowhere — the warning signs were there for weeks."',
-      desc: "Blaze reads those warnings early — SSD wear, overheating, crash history — while there's still time to fix them cheaply. And the Compatibility Matrix tells you if your machine can actually handle Android Studio, VS Code, or whatever your course throws at it next semester.",
+      desc: "Tekki Blaze reads those warnings early — SSD wear, overheating, crash history — while there's still time to fix them cheaply. And the Compatibility Matrix tells you if your machine can actually handle Android Studio, VS Code, or whatever your course throws at it next semester.",
       icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
     },
     {
@@ -43,7 +43,7 @@ export default function WhoSection() {
           {cards.map((c, i) => (
             <div
               key={i}
-              className="relative rounded-2xl p-6 lg:p-8 bg-white flex flex-col transition-all duration-300 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] hover:shadow-[0_12px_36px_rgba(4,52,44,0.08)] hover:-translate-y-1"
+              className="relative rounded-[24px] p-6 lg:p-8 bg-white  transition-all duration-300 border border-[rgba(29,158,117,0.12)] shadow-[0_4px_24px_rgba(4,52,44,0.03)] hover:shadow-[0_12px_36px_rgba(4,52,44,0.08)] hover:-translate-y-1"
             >
               <div className="w-[42px] h-[42px] rounded-[10px] flex items-center justify-center mb-5 bg-[#fdf4e7]">
                 {c.icon}
@@ -55,7 +55,7 @@ export default function WhoSection() {
 
               <h3 className="font-inter font-dark text-[17.5px] text-ink mb-3 leading-[1.3]">{c.title}</h3>
 
-              <div className="font-serif italic text-[14px] text-text-mid leading-[1.6] mb-4">
+              <div className="border-l-[2px] border-amber-brand pl-3.5 font-serif italic text-[14px] text-text-mid leading-[1.6] mb-4">
                 {c.quote}
               </div>
 

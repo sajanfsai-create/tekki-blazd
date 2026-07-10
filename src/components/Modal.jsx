@@ -19,7 +19,7 @@ export default function Modal({ isOpen, onClose, children }) {
     <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-6 animate-[fadeIn_0.2s_ease-out_forwards]">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-ink/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-ink/80"
         onClick={onClose}
       ></div>
 

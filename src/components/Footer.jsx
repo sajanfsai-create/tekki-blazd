@@ -6,15 +6,15 @@ export default function Footer() {
       <div className="wrap flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
         {/* Left Side */}
         <div className="max-w-sm">
-          <div className="flex items-center gap-2.5 mb-6">
+          <div className="flex items-center gap-2.5 mb-1.5">
             <LogoMark size={32} />
             <span className="font-serif font-bold text-[22px] text-white leading-none">
               Tekki
               <span className="text-amber-base pl-1.5">X</span>
             </span>
-            {/* <span className="text-[12px] tracking-[3px] font-bold text-teal-base uppercase border-l border-[rgba(255,255,255,0.15)] pl-3">
-              Blaze
-            </span> */}
+          </div>
+          <div className="text-[10px] tracking-[2px] font-bold text-teal-base uppercase mb-6 pl-[42px]">
+            A Tekki X Product
           </div>
           <p className="text-teal-ghost text-[17px] font-serif font-medium leading-[1.4]">
             Know your machine. One scan,<br />every answer.
@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
             <h4 className="text-teal-light text-[13px] font-bold tracking-[2px] uppercase mb-1">Product</h4>
-            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Why Blaze</a>
+            <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Why Tekki Blaze</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">What It Checks</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">How It Works</a>
             <a href="#" className="text-teal-ghost text-[14px] hover:text-white transition-colors">Pricing</a>
@@ -61,7 +61,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="border-t border-[rgba(93,202,165,0.2)] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-teal-light">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-            <span>&copy; {new Date().getFullYear()} Tekki-X &middot; tekki-x.com</span>
+            <span>&copy; {new Date().getFullYear()} Tekki X &middot; tekki-x.com</span>
             {/* <span className="hidden sm:inline">&middot;</span> */}
             {/* <span>
               Developed by <a href="https://bostontechindia.in/" target="_blank" rel="noopener noreferrer" className="text-amber-base font-bold hover:text-amber-light underline underline-offset-2 transition-colors">Boston Tech India</a>

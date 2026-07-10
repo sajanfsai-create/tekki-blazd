@@ -11,7 +11,7 @@
   --color-teal-light: #5DCAA5;
   --color-teal-pale: #9FE1CB;
   --color-teal-ghost: #E1F5EE;
-  
+
   --color-amber: #EF9F27;
   --color-amber-base: #EF9F27;
   --color-amber-brand: #EF9F27;
@@ -20,13 +20,13 @@
   --color-amber-soft: #FBF1DF;
   --color-amber-ghost: #FCF3E1;
   --color-gold: #FFBF00;
-  
+
   --color-grade-a: #085041;
   --color-grade-b: #1D9E75;
   --color-grade-c: #EF9F27;
   --color-grade-d: #BA7517;
   --color-grade-f: #C8472E;
-  
+
   --color-ink: #0D1F1A;
   --color-text-mid: #3A5A52;
   --color-text-soft: #6A8A80;
@@ -56,24 +56,48 @@
   --shadow-hero: 0 16px 50px rgba(4, 52, 44, .14);
   --shadow-card: 0 4px 18px rgba(4, 52, 44, .08);
   --shadow-pricing: 0 30px 80px rgba(0, 0, 0, .35);
-  
+
   /* Core Custom Animations */
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .3; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: .3;
+    }
   }
+
   @keyframes fillProgress {
-    from { width: 0; }
+    from {
+      width: 0;
+    }
   }
+
   @keyframes ctaPulse {
-    0%, 100% { box-shadow: 0 8px 24px rgba(239,159,39,.28); }
-    50% { box-shadow: 0 10px 34px rgba(239,159,39,.5); }
+
+    0%,
+    100% {
+      box-shadow: 0 8px 24px rgba(239, 159, 39, .28);
+    }
+
+    50% {
+      box-shadow: 0 10px 34px rgba(239, 159, 39, .5);
+    }
   }
+
   @keyframes expfill {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
   }
-  
+
   --animate-blink: blink 1.6s infinite;
   --animate-progress: fillProgress 1.4s ease-out forwards;
   --animate-cta-pulse: ctaPulse 2.8s ease-in-out infinite;
@@ -100,9 +124,31 @@ body {
 
 /* Explorer progress bar animation */
 @keyframes progress-slow {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
+
 .animate-progress-slow {
   animation: progress-slow linear infinite;
+}
+
+@keyframes tabFade {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-fade {
+  animation: tabFade 0.35s ease-out forwards;
 }

@@ -1,3 +1,5 @@
+import Footer from './Footer'
+
 export default function Terms() {
   return (
     <div className="bg-white text-emerald-950 antialiased leading-relaxed font-sans">
@@ -210,32 +212,7 @@ export default function Terms() {
         </div>
       </div>
 
-      <footer className="bg-[#03251F] text-emerald-200/80 py-12 border-t border-emerald-950">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="flex flex-wrap justify-between gap-6 mb-8">
-            <a href="/" className="flex items-center gap-3 no-underline">
-              <svg className="w-9 h-9 rounded-2xl flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56" />
-                <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
-                <circle cx="50" cy="50" r="9" fill="#FFBF00" />
-              </svg>
-              <span className="font-serif font-bold text-xl text-white leading-none">Tekki <span className="text-amber-500">X</span></span>
-              <span className="text-[10px] tracking-[3px] font-bold text-emerald-400 uppercase border-l border-emerald-500/20 pl-2.5">Blaze</span>
-            </a>
-            <div className="flex flex-wrap gap-6">
-              <a href="/privacy" className="text-emerald-200/70 hover:text-white text-sm transition-colors">Privacy</a>
-              <a href="/terms" className="text-emerald-200/70 hover:text-white text-sm transition-colors">Terms</a>
-              <a href="/refund" className="text-emerald-200/70 hover:text-white text-sm transition-colors">Refund Policy</a>
-              <a href="/help" className="text-emerald-200/70 hover:text-white text-sm transition-colors">Help &amp; FAQ</a>
-              <a href="/#get" className="text-emerald-200/70 hover:text-white text-sm transition-colors">Pricing</a>
-            </div>
-          </div>
-          <div className="border-t border-emerald-500/10 pt-5 flex flex-wrap justify-between gap-2 text-xs text-emerald-400/60">
-            <span>© 2026 TEKKI · tekki-x.com</span>
-            <span>TEKKI (trading as Tekki‑X) — operating the “Tekki Blaze” product</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

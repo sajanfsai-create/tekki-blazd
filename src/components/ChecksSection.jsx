@@ -65,7 +65,7 @@ export default function ChecksSection() {
               12 checks,<br />grouped the way <span className="text-teal-mid">engineers think.</span>
             </h2>
             <p className="text-base text-text-mid mt-4 font-light leading-relaxed">
-              Blaze goes far beyond "is it on." Every component is verified, graded, and explained across three intelligence layers — all in one pass.
+              Tekki Blaze goes far beyond "is it on." Every component is verified, graded, and explained across three intelligence layers — all in one pass.
             </p>
           </Reveal>
         </div>

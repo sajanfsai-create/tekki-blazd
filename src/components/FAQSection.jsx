@@ -41,45 +41,7 @@ export default function FAQSection() {
         </>
       )
     },
-    {
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      ),
-      q: "Why not just use free diagnostic tools?",
-      a: (
-        <>
-          <p className="mb-5 text-[15px] leading-[1.6] text-text-mid">Free tools are good at one thing each. Blaze is different in three ways:</p>
-          <div className="space-y-3.5">
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 text-amber-base shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              </div>
-              <div className="text-[14.5px] leading-[1.5] text-text-mid">
-                <span className="font-bold text-ink">Blaze checks 12 components in one pass</span> — free tools check one at a time and leave interpretation to you.
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 text-amber-base shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              </div>
-              <div className="text-[14.5px] leading-[1.5] text-text-mid">
-                <span className="font-bold text-ink">Blaze produces a tamper-evident, shareable certificate</span> — a buyer or repair shop will not accept a screenshot from a free utility.
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 text-amber-base shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              </div>
-              <div className="text-[14.5px] leading-[1.5] text-text-mid">
-                <span className="font-bold text-ink">Blaze turns findings into next steps</span> — plain-English advice today, with part & technician matching on the roadmap.
-              </div>
-            </div>
-          </div>
-        </>
-      )
-    },
+
     {
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -104,7 +66,7 @@ export default function FAQSection() {
       a: (
         <>
           <p className="mb-4 text-[15px] leading-[1.6] text-text-mid">Not at all — a re-scan is simply a receipt for hardware, the same way you'd keep a printed invoice. It confirms the repair worked and gives both you and your technician a shared, verified record of the outcome.</p>
-          <p className="text-[15px] leading-[1.6] text-text-mid">It's a private record for your own peace of mind. In fact, the best technicians encourage it — a Tekki-verified technician welcomes re-scans as part of their service guarantee, because a verified result reflects well on their work.</p>
+          <p className="text-[15px] leading-[1.6] text-text-mid">It's a private record for your own peace of mind. In fact, the best technicians encourage it — a Tekki X-verified technician welcomes re-scans as part of their service guarantee, because a verified result reflects well on their work.</p>
         </>
       )
     },
@@ -179,7 +141,7 @@ export default function FAQSection() {
         </svg>
       ),
       q: "Windows warned me about the download. Is it safe?",
-      a: <p className="text-[15px] leading-[1.6] text-text-mid">Windows SmartScreen sometimes shows a caution screen for newer publishers — that’s normal for any young software brand. Blaze is Authenticode code-signed, which means Windows can cryptographically confirm the file is genuinely ours and untampered. Click “More info → Run anyway” and check that the verified publisher reads <strong>Tekki-X</strong> before proceeding. If the publisher name doesn’t match, don’t run it — download only from tekki-x.com.</p>
+      a: <p className="text-[15px] leading-[1.6] text-text-mid">Windows SmartScreen sometimes shows a caution screen for newer publishers — that’s normal for any young software brand. Tekki Blaze is Authenticode code-signed, which means Windows can cryptographically confirm the file is genuinely ours and untampered. Click “More info → Run anyway” and check that the verified publisher reads <strong>Tekki-X</strong> before proceeding. If the publisher name doesn’t match, don’t run it — download only from tekki-x.com.</p>
     },
     {
       icon: (

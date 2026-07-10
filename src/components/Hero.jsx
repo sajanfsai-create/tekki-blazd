@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from './Icons';
 import Reveal from './Reveal';
 import Modal from './Modal';
-import DemoVideoSimulation from './DemoVideoSimulation';
+import VideoModal from './VideoModal';
 import SampleReportPreview from './SampleReportPreview';
+import WaitlistModal from './WaitlistModal';
 
 function AppWindow() {
+  const [activeTab, setActiveTab] = useState('scan');
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveTab(prev => prev === 'scan' ? 'care' : 'scan');
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
   const scanRows = [
     { label: 'Component Health', pct: '94%', score: '94/100', status: 'Good', statusBg: 'bg-teal-ghost', statusText: 'text-teal-mid', barColor: 'bg-teal-base' },
     { label: 'Storage & SSD Wear', pct: '72%', score: '72/100', status: 'Watch', statusBg: 'bg-amber-ghost', statusText: 'text-amber-dark', barColor: 'bg-amber-brand' },
@@ -46,37 +56,64 @@ function AppWindow() {
         </span>
       </div>
 
-      <div className="p-6">
+      <div className="p-5">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-[18px]">
-          <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-teal-deep to-teal-mid flex items-center justify-center shrink-0 shadow-[0_10px_24px_rgba(8,80,65,0.3)]">
-            <span className="font-serif font-bold text-[42px] text-white leading-none">A</span>
+        <div className="flex items-center gap-3.5 mb-3.5">
+          <div className="w-[68px] h-[68px] rounded-xl bg-gradient-to-br from-teal-deep to-teal-mid flex items-center justify-center shrink-0 shadow-[0_10px_24px_rgba(8,80,65,0.3)]">
+            <span className="font-serif font-bold text-[36px] text-white leading-none">A</span>
           </div>
           <div>
-            <div className="text-xs tracking-wider uppercase text-text-soft font-semibold mb-0.5">Overall Hardware Grade</div>
-            <div className="font-serif text-[21px] font-bold text-ink mb-0.5">Healthy & Reliable</div>
-            <div className="text-[13px] text-text-soft">12 components checked · 0 critical issues</div>
+            <div className="text-[11.5px] tracking-wider uppercase text-text-soft font-semibold mb-0.5">Overall Hardware Grade</div>
+            <div className="font-serif text-[19px] font-bold text-ink mb-0.5">Healthy & Reliable</div>
+            <div className="text-[12.5px] text-text-soft">12 components checked · 0 critical issues</div>
           </div>
         </div>
 
         {/* Device info */}
-        <div className="font-mono text-[11px] text-text-soft bg-off-white border border-[rgba(29,158,117,0.14)] rounded-md p-2 flex justify-between mb-4">
+        <div className="font-mono text-[11px] text-text-soft bg-off-white border border-[rgba(29,158,117,0.14)] rounded-md p-1.5 px-2 flex justify-between mb-3">
           <span>DELL INSPIRON 15 · i5-1135G7</span>
           <span>SCAN #A29F · 2:54</span>
         </div>
 
-        {/* Scan group */}
-        <div className="flex flex-col gap-[9px]">
-          <div className="text-[10px] tracking-widest uppercase font-black text-teal-mid pt-2 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-base"></span>Scan · your hardware, measured
-          </div>
-          {scanRows.map((row, i) => renderRow(row, i, false))}
+        {/* Custom Toggle / Tabs */}
+        <div className="flex bg-off-white rounded-[10px] p-1 mb-3 border border-[rgba(29,158,117,0.14)] relative">
+          <div className="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white border border-[rgba(29,158,117,0.08)] rounded-md shadow-[0_2px_8px_rgba(4,52,44,0.04)] transition-all duration-300 ease-out"
+            style={{ transform: activeTab === 'scan' ? 'translateX(0)' : 'translateX(100%)', left: '4px' }}></div>
 
-          {/* Care group */}
-          <div className="text-[10px] tracking-widest uppercase font-black text-amber-dark pt-2 mt-1.5 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-brand"></span>Care · upkeep & history, decoded
-          </div>
-          {careRows.map((row, i) => renderRow(row, i, i === careRows.length - 1))}
+          <button
+            onClick={() => setActiveTab('scan')}
+            className={`flex-1 relative z-10 text-[10.5px] font-bold tracking-widest uppercase py-2 text-center transition-colors cursor-pointer border-none bg-transparent ${activeTab === 'scan' ? 'text-teal-mid' : 'text-text-soft hover:text-text-mid'}`}
+          >
+            Scan Check
+          </button>
+          <button
+            onClick={() => setActiveTab('care')}
+            className={`flex-1 relative z-10 text-[10.5px] font-black tracking-widest uppercase py-2 text-center transition-all cursor-pointer border-none bg-transparent flex items-center justify-center gap-1.5 ${activeTab === 'care'
+              ? 'text-amber-dark'
+              : 'text-transparent bg-clip-text bg-gradient-to-r from-[#D6A13B] to-[#A36D16] hover:scale-105 drop-shadow-[0_1px_2px_rgba(214,161,59,0.2)]'
+              }`}
+          >
+            Care Check <span className={activeTab === 'care' ? 'hidden' : 'text-[#D6A13B] text-[12px] leading-none drop-shadow-none'}></span>
+          </button>
+        </div>
+
+        {/* Content based on tab */}
+        <div key={activeTab} className="flex flex-col gap-[6px] animate-tab-fade">
+          {activeTab === 'scan' ? (
+            <>
+              <div className="text-[10px] tracking-widest uppercase font-black text-teal-mid pt-1 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-base"></span>your hardware, measured
+              </div>
+              {scanRows.map((row, i) => renderRow(row, i, i === scanRows.length - 1))}
+            </>
+          ) : (
+            <>
+              <div className="text-[10px] tracking-widest uppercase font-black text-amber-dark pt-1 border-b border-[rgba(29,158,117,0.14)] flex items-center gap-1.5 pb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-brand"></span>upkeep & history, decoded
+              </div>
+              {careRows.map((row, i) => renderRow(row, i, i === careRows.length - 1))}
+            </>
+          )}
 
           <div className="text-[11px] text-text-soft pt-2 font-normal border-t border-[rgba(29,158,117,0.14)]">
             + Device Tests & Error Intelligence — all 12 checks in your full report
@@ -84,9 +121,9 @@ function AppWindow() {
         </div>
 
         {/* Footer buttons */}
-        <div className="flex gap-2.5 mt-4">
-          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold p-3 rounded-xl bg-ink text-amber-light hover:bg-black transition-colors">↓ Download PDF</a>
-          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold p-3 rounded-xl bg-off-white border border-[rgba(29,158,117,0.14)] text-amber-dark hover:bg-teal-ghost transition-colors">Share via WhatsApp</a>
+        <div className="flex gap-2.5 mt-3">
+          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold py-2.5 px-3 rounded-xl bg-ink text-amber-light hover:bg-black transition-colors">↓ Download PDF</a>
+          <a href="#demo" className="flex-1 text-center text-[13px] font-semibold py-2.5 px-3 rounded-xl bg-off-white border border-[rgba(29,158,117,0.14)] text-amber-dark hover:bg-teal-ghost transition-colors">Share via WhatsApp</a>
         </div>
       </div>
     </div>
@@ -96,6 +133,7 @@ function AppWindow() {
 export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
   return (
     <header className="py-[52px] bg-[radial-gradient(110%_70%_at_80%_0%,var(--color-teal-ghost),var(--color-off-white)_52%,#fff)] overflow-hidden relative" id="top">
@@ -121,7 +159,7 @@ export default function Hero() {
 
           <Reveal delay={200}>
             <p className="text-[17px] text-text-mid mb-2.5 leading-relaxed font-light max-w-[460px]">
-              <b>A complete health checkup for your computer — in 3 minutes.</b> One scan grades all 12 parts, benchmarks real speed, clears the junk, and puts an exact price on every upgrade. Then scan #2 proves the fix worked.
+              <b>Tekki Blaze gives your computer a complete health checkup — in 3 minutes.</b> One scan grades all 12 parts, benchmarks real speed, clears the junk, and puts an exact price on every upgrade. Then scan #2 proves the fix worked.
             </p>
           </Reveal>
 
@@ -161,7 +199,8 @@ export default function Hero() {
               </div>
               <div className="text-[13px] text-text-soft flex items-center gap-1.5">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6A8A80" strokeWidth="1.8" /><path d="M12 7v5l3 2" stroke="#6A8A80" strokeWidth="1.9" strokeLinecap="round" /></svg>
-                Coming soon: macOS & Linux · <span className="text-amber-dark font-bold underline decoration-2 underline-offset-2 cursor-pointer hover:text-amber-brand transition-colors">Join Waitlist →</span>
+                Coming soon: macOS & Linux &middot;
+                <span onClick={() => setIsWaitlistOpen(true)} className="ml-1 text-amber-dark font-bold underline decoration-2 underline-offset-2 cursor-pointer hover:text-amber-brand transition-colors">Join Waitlist &rarr;</span>
               </div>
             </div>
           </Reveal>
@@ -176,14 +215,15 @@ export default function Hero() {
       </div>
 
       <Modal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)}>
-        <DemoVideoSimulation onViewReport={() => {
-          setIsVideoOpen(false);
-          setTimeout(() => setIsReportOpen(true), 300);
-        }} />
+        <VideoModal />
       </Modal>
 
       <Modal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)}>
         <SampleReportPreview />
+      </Modal>
+
+      <Modal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)}>
+        <WaitlistModal />
       </Modal>
     </header>
   );

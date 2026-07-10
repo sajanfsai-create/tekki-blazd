@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from './Reveal';
 import Modal from './Modal';
-import DemoVideoSimulation from './DemoVideoSimulation';
+import VideoModal from './VideoModal';
 import SampleReportPreview from './SampleReportPreview';
 
 export default function DemoSection() {
@@ -68,10 +68,7 @@ export default function DemoSection() {
 
       {/* Modals for Video and Report */}
       <Modal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)}>
-        <DemoVideoSimulation onViewReport={() => {
-          setIsVideoOpen(false);
-          setTimeout(() => setIsReportOpen(true), 300);
-        }} />
+        <VideoModal />
       </Modal>
 
       <Modal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)}>

@@ -102,6 +102,7 @@ export default function PricingSection() {
 
               <button className="w-full flex items-center justify-center gap-2 bg-amber-brand text-ink font-bold text-[14.5px] py-3.5 rounded-xl hover:bg-amber-light transition-colors duration-200 shadow-[0_4px_12px_rgba(239,159,39,0.2)]">
                 Get my 2 scans
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0D1F1A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
             </div>
 
@@ -139,7 +140,8 @@ export default function PricingSection() {
               </div>
 
               <button className="w-full flex items-center justify-center gap-2 bg-white border border-amber-brand text-ink font-bold text-[14.5px] py-3.5 rounded-xl hover:bg-[rgba(239,159,39,0.05)] transition-colors duration-200">
-                Buy Household Pack &rarr;
+                Buy Household Pack      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0D1F1A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+
               </button>
             </div>
           </div>

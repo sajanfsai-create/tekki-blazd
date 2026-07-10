@@ -25,20 +25,20 @@ function MainContent() {
     <div className="font-sans text-ink bg-white antialiased [line-height:1.6] max-sm:pb-[74px]">
       <Nav />
       <main>
-          <Hero />
-          <TrustStrip />
+        <Hero />
+        <TrustStrip />
 
-          <HowItWorks />
-          <WhySection />
-          <ChecksSection />
-          <DemoSection />
-          <WhoSection />
-          <PricingSection />
-          <FAQSection />
-          <CloseSection />
-        </main>
-        <Footer />
-        <MobileCTA />
+        <HowItWorks />
+        <WhySection />
+        <ChecksSection />
+        <DemoSection />
+        <WhoSection />
+        <PricingSection />
+        <FAQSection />
+        <CloseSection />
+      </main>
+      <Footer />
+      <MobileCTA />
     </div>
   )
 }

@@ -16,7 +16,7 @@ export default function HowItWorks() {
               Fix.
             </h2>
             <p className="text-base text-text-mid mt-4 font-light leading-relaxed">
-              Most diagnostics stop at raw numbers you have to interpret yourself. Blaze takes you all the way to a solved problem — in three clean steps.
+              Most diagnostics stop at raw numbers you have to interpret yourself. Tekki Blaze takes you all the way to a solved problem — in three clean steps.
             </p>
           </Reveal>
         </div>
