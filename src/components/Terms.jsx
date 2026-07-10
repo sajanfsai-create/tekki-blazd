@@ -11,7 +11,7 @@ export default function Terms() {
  <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
  <circle cx="50" cy="50" r="9" fill="#FFBF00" />
  </svg>
- <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">X</span></span>
+ <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">Blaze</span></span>
  {/* <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span> */}
  </a>
  <div className="flex items-center gap-6">
@@ -40,7 +40,7 @@ export default function Terms() {
  </div>
 
  {/* <div className="bg-amber-50 border border-dashed border-amber-500 rounded-xl p-4.5 mt-6 text-sm text-amber-900/80">
- ✎ <b className="text-amber-700 font-bold">Before publishing:</b> the company name (TEKKI) and Bengaluru address are filled in. Still to replace are the highlighted <span className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded">[placeholders]</span> — the <b>Grievance Officer’s name</b>, a <b>contact phone number</b>, and the <b>support / privacy / grievance / sales email addresses</b> (set these up on your domain). GSTIN is intentionally not shown here (it isn’t required on the website; it must appear on your tax invoices). This India-aligned content should be reviewed and signed off by a qualified Indian lawyer before going live. Remove this note before publishing.
+ ✎ <b className="text-amber-700 font-bold">Before publishing:</b> the company name (TEKKI) and Bengaluru address are filled in. Still to replace are the highlighted <span className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded">[placeholders]</span> — the <b>Grievance Officer’s name</b>, a <b>contact phone number</b>, and the <b>support email address</b> (set these up on your domain). GSTIN is intentionally not shown here (it isn’t required on the website; it must appear on your tax invoices). This India-aligned content should be reviewed and signed off by a qualified Indian lawyer before going live. Remove this note before publishing.
  </div> */}
  </div>
  </header>
@@ -169,7 +169,7 @@ export default function Terms() {
  <tbody className="divide-y divide-emerald-950/10">
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Name</td>
- <td className="px-4 py-3.5 align-top"><span className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded">[Grievance Officer Name]</span></td>
+ <td className="px-4 py-3.5 align-top">Srinivasan Kannu</td>
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Designation</td>
@@ -177,11 +177,11 @@ export default function Terms() {
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Email</td>
- <td className="px-4 py-3.5 align-top"><span className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded">grievance@tekki-x.com</span></td>
+ <td className="px-4 py-3.5 align-top"><a href="mailto:support@tekki-x.com" className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded hover:bg-amber-200 transition-colors cursor-pointer">support@tekki-x.com</a></td>
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Phone</td>
- <td className="px-4 py-3.5 align-top"><span className="bg-amber-100 border-b border-dashed border-amber-700 text-amber-700 font-semibold px-0.5 rounded">[+91‑XXXXXXXXXX]</span> (Mon–Fri, 10:00–18:00 IST)</td>
+ <td className="px-4 py-3.5 align-top">+91 81057 63079 (Mon–Fri, 10:00–18:00 IST)</td>
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Address</td>

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Reveal from './Reveal';
+import Modal from './Modal';
+import WaitlistModal from './WaitlistModal';
 
 export default function FAQSection() {
  const [openIndex, setOpenIndex] = useState(null);
+ const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
  const toggleAccordion = (index) => {
  setOpenIndex(prev => prev === index ? null : index);
@@ -117,7 +120,7 @@ export default function FAQSection() {
  <div className="flex flex-col sm:flex-row py-3.5 border-b border-[rgba(29,158,117,0.1)] gap-2 sm:gap-6 items-start sm:items-center">
  <div className="w-full sm:w-[180px] text-[13px] text-text-soft">Coming soon</div>
  <div className="flex-1 text-[13px] text-ink font-medium">
- macOS & Linux — <a href="#" className="font-bold border-b-2 border-amber-brand hover:text-amber-dark transition-colors">join waitlist</a>
+ macOS & Linux — <span onClick={(e) => { e.preventDefault(); setIsWaitlistOpen(true); }} className="font-bold border-b-2 border-amber-brand hover:text-amber-dark transition-colors cursor-pointer">join waitlist</span>
  </div>
  </div>
  </div>
@@ -141,7 +144,7 @@ export default function FAQSection() {
  </svg>
  ),
  q: "What if the scan doesn’t work on my machine?",
- a: <p className="text-[15px] leading-[1.6] text-text-mid">If a scan fails to complete on a supported Windows 10/11 machine, we’ll re-issue the credit or refund that scan — write to support@tekki-x.com with your Scan ID and we’ll sort it out. Unused credits never expire, so there’s no pressure to use them before you’re ready.</p>
+ a: <p className="text-[15px] leading-[1.6] text-text-mid">If a scan fails to complete on a supported Windows 10/11 machine, we’ll re-issue the credit or refund that scan — write to <a href="mailto:support@tekki-x.com" className="text-teal-600 font-semibold hover:underline">support@tekki-x.com</a> with your Scan ID and we’ll sort it out. Unused credits never expire, so there’s no pressure to use them before you’re ready.</p>
  },
  {
  icon: (
@@ -261,6 +264,9 @@ export default function FAQSection() {
  </div>
  </div>
  </div>
+ <Modal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)}>
+ <WaitlistModal />
+ </Modal>
  </section>
  )
 }

@@ -151,7 +151,7 @@ export default function TekkiBlazePartners() {
  <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
  <circle cx="50" cy="50" r="9" fill="#FFBF00" />
  </svg>
- <span className="font-playfair font-bold text-[18px] text-ink">Tekki <span className="text-amber">X</span></span>
+ <span className="font-playfair font-bold text-[18px] text-ink">Tekki <span className="text-amber">Blaze</span></span>
  <span className="text-[9px] tracking-[3px] font-bold text-teal-mid uppercase border-l border-hairline pl-[9px]">Partners</span>
  </Link>
  <div className="flex items-center gap-[18px]">

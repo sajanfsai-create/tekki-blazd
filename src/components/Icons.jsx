@@ -10,11 +10,7 @@ export function CheckIcon({ color = '#1D9E75', size = 17 }) {
 
 export function LogoMark({ size = 40 }) {
  return (
- <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="rounded-lg shrink-0">
- <rect x="6" y="6" width="88" height="88" rx="20" fill="#0F6E56"/>
- <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35"/>
- <circle cx="50" cy="50" r="9" fill="#FFBF00"/>
- </svg>
+ <img src="/image.png" alt="Logo" style={{ width: size, height: size }} className="shrink-0 object-contain" />
  )
 }
 

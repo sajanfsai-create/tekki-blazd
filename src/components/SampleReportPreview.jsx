@@ -64,7 +64,7 @@ export default function SampleReportPreview() {
  <div>
  <div className="flex items-center gap-2 mb-6">
  <LogoMark size={28} />
- <span className="font-serif font-bold text-xl leading-none">Tekki <span className="text-amber-base">X</span></span>
+ <span className="font-serif font-bold text-xl leading-none">Tekki <span className="text-amber-base">Blaze</span></span>
  <span className="text-[10px] tracking-widest font-bold text-teal-base uppercase border-l border-white/20 pl-2">Tekki Blaze Report</span>
  </div>
  <h1 className="font-sans font-bold text-3xl mb-2">PC Health Scan</h1>

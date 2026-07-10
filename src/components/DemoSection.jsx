@@ -47,14 +47,14 @@ export default function DemoSection() {
  <div className="flex items-center justify-center sm:justify-start gap-3">
  <button 
  onClick={() => setIsReportOpen(true)}
- className="flex items-center gap-1.5 px-4 py-2 rounded-[10px] border border-[rgba(29,158,117,0.25)] text-[#00604b] text-[13px] font-bold hover:bg-teal-ghost transition-colors"
+ className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[rgba(29,158,117,0.25)] text-[#00604b] text-[13px] font-bold hover:bg-teal-ghost transition-colors"
  >
  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
  Sample PDF
  </button>
  <button 
  onClick={() => setIsVideoOpen(true)}
- className="flex items-center gap-1.5 px-4 py-2 rounded-[10px] bg-[#0d221c] text-white text-[13px] font-bold hover:bg-[#153a2f] transition-colors shadow-[0_4px_12px_rgba(13,34,28,0.15)]"
+ className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0d221c] text-white text-[13px] font-bold hover:bg-[#153a2f] transition-colors shadow-[0_4px_12px_rgba(13,34,28,0.15)]"
  >
  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z" /></svg>
  Watch video

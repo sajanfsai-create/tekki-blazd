@@ -34,8 +34,8 @@ export default function Contact() {
  <path d="M32 32 L68 68 M68 32 L32 68" stroke="#E1F5EE" strokeWidth="9" strokeLinecap="round" opacity="0.35" />
  <circle cx="50" cy="50" r="9" fill="#FFBF00" />
  </svg>
- <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">X</span></span>
- <span className="text-[10px] tracking-[3px] font-bold text-emerald-700 uppercase border-l border-emerald-950/10 pl-2.5">Blaze</span>
+ <span className="font-serif font-bold text-xl text-emerald-950 leading-none">Tekki <span className="text-amber-500">Blaze</span></span>
+
  </a>
  <div className="flex items-center gap-6">
  <div className="hidden md:flex items-center gap-6">
@@ -123,15 +123,15 @@ export default function Contact() {
  <div className="flex flex-col gap-2">
  <div>
  <span className="text-[13px] font-semibold text-emerald-700">General & Support</span>
- <p className="text-[14px] text-emerald-800/80">support@tekki-x.com</p>
+ <p className="text-[14px] text-emerald-800/80"><a href="mailto:support@tekki-x.com" className="hover:underline">support@tekki-x.com</a></p>
  </div>
  <div>
  <span className="text-[13px] font-semibold text-emerald-700">Sales & Partnerships</span>
- <p className="text-[14px] text-emerald-800/80">sales@tekki-x.com</p>
+ <p className="text-[14px] text-emerald-800/80"><a href="mailto:support@tekki-x.com" className="hover:underline">support@tekki-x.com</a></p>
  </div>
  <div>
  <span className="text-[13px] font-semibold text-emerald-700">Privacy & Data Requests</span>
- <p className="text-[14px] text-emerald-800/80">privacy@tekki-x.com</p>
+ <p className="text-[14px] text-emerald-800/80"><a href="mailto:support@tekki-x.com" className="hover:underline">support@tekki-x.com</a></p>
  </div>
  </div>
  </div>

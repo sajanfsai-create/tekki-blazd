@@ -10,11 +10,11 @@ export default function Footer() {
  <LogoMark size={32} />
  <span className="font-serif font-bold text-[22px] text-white leading-none">
  Tekki
- <span className="text-amber-base pl-1.5">X</span>
+ <span className="text-amber-base pl-1.5">Blaze</span>
  </span>
  </div>
  <div className="text-[10px] tracking-[2px] font-bold text-teal-base uppercase mb-6 pl-[42px]">
- A Tekki X Product
+ A Tekki Blaze Product
  </div>
  <p className="text-teal-ghost text-[17px] font-serif font-medium leading-[1.4]">
  Know your machine. One scan,<br />every answer.
