@@ -77,7 +77,7 @@ export default function Nav() {
  <LogoMark size={36} />
  <span className="font-serif font-bold text-[21px] text-ink leading-none">
  Tekki
- <span className="text-amber-brand pl-1.5">X</span>
+ <span className="text-amber-brand pl-1.5">Blaze</span>
  </span>
  </a>
 
