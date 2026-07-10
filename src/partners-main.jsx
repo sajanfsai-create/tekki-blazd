@@ -4,7 +4,7 @@ import PartnersApp from './PartnersApp.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <PartnersApp />
-  </React.StrictMode>,
+ <React.StrictMode>
+ <PartnersApp />
+ </React.StrictMode>,
 )
