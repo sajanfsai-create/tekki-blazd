@@ -82,10 +82,7 @@ export default function Contact() {
  <div>
  <h3 className="font-inter font-bold text-[16px] text-emerald-950 mb-1.5">Office Address</h3>
  <p className="text-[14px] text-emerald-800/80 leading-relaxed">
- 467/468, Shri Krishna Temple Rd,<br />
- Indira Nagar 1st Stage, Stage 1,<br />
- Indiranagar, Bengaluru,<br />
- Karnataka 560038, India
+ Indiranagar, Bengaluru, India
  </p>
  </div>
  </div>
@@ -146,7 +143,7 @@ export default function Contact() {
  <circle cx="12" cy="10" r="3" />
  </svg>
  <p className="text-emerald-400 text-sm font-medium">Indiranagar, Bengaluru</p>
- <p className="text-emerald-600 text-xs mt-1">Karnataka 560038</p>
+ <p className="text-emerald-600 text-xs mt-1">India</p>
  </div>
  </div>
  </div>

@@ -73,7 +73,7 @@ export default function Terms() {
 
  <section id="t1" className="scroll-mt-24">
  <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">1. Acceptance of Terms</h2>
- <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Bengaluru Urban, Karnataka – 560038, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
+ <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at Indiranagar, Bengaluru, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
  <p>These Terms of Service (<strong>“Terms”</strong>) govern your access to and use of the Tekki Blaze website and application. By downloading, installing, purchasing or using the Service, you agree to these Terms, our <a href="/privacy" className="text-emerald-700 hover:underline">Privacy Policy</a> and <a href="/refund" className="text-emerald-700 hover:underline">Refund Policy</a>, which together form a legally binding electronic agreement under the Information Technology Act, 2000. If you do not agree, do not use the Service.</p>
  </section>
 
@@ -185,7 +185,7 @@ export default function Terms() {
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Address</td>
- <td className="px-4 py-3.5 align-top">No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Karnataka – 560038</td>
+ <td className="px-4 py-3.5 align-top">Indiranagar, Bengaluru, India</td>
  </tr>
  </tbody>
  </table>

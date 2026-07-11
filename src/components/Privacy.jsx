@@ -73,7 +73,7 @@ export default function Privacy() {
 
  <section id="p1" className="scroll-mt-24">
  <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">1. Introduction</h2>
- <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Bengaluru Urban, Karnataka – 560038, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
+ <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at Indiranagar, Bengaluru, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
  <p>We respect your privacy. This Privacy Policy explains what personal data we collect when you use the Tekki Blaze website and application, how we use and protect it, and the rights available to you under the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>, the <strong>Information Technology Act, 2000</strong> and the <strong>Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 (“SPDI Rules”)</strong>.</p>
  <p className="mt-3.5">By installing or using Tekki Blaze, you confirm that you have read and understood this Policy. If you do not agree, please do not use the Service.</p>
  </section>
@@ -223,7 +223,7 @@ export default function Privacy() {
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Address</td>
- <td className="px-4 py-3.5 align-top">No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Karnataka – 560038</td>
+ <td className="px-4 py-3.5 align-top">Indiranagar, Bengaluru, India</td>
  </tr>
  </tbody>
  </table>

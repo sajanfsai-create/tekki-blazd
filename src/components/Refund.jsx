@@ -68,7 +68,7 @@ export default function Refund() {
  
  <section id="r1" className="scroll-mt-24">
  <h2 className="font-inter font-extrabold text-2xl text-emerald-950 mb-3 tracking-tight">1. Overview</h2>
- <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Bengaluru Urban, Karnataka – 560038, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
+ <p className="mb-3.5">This website and the “Tekki Blaze” software application (the <strong>“Service”</strong>) are operated by <strong>TEKKI</strong>, a partnership firm registered under the Indian Partnership Act, 1932, having its principal place of business at Indiranagar, Bengaluru, India (trading as <strong>“Tekki‑X”</strong>; <strong>“we”, “us”</strong> or <strong>“our”</strong>).</p>
  <p>This Refund &amp; Cancellation Policy explains when you can get a refund for Tekki Blaze. It is designed to be fair and transparent, consistent with the <strong>Consumer Protection Act, 2019</strong> and the <strong>Consumer Protection (E‑Commerce) Rules, 2020</strong>. Please read it together with our <a href="/terms" className="text-emerald-700 hover:underline">Terms of Service</a>.</p>
  </section>
 
@@ -190,7 +190,7 @@ export default function Refund() {
  </tr>
  <tr className="odd:bg-white even:bg-emerald-50/20">
  <td className="px-4 py-3.5 align-top font-medium">Address</td>
- <td className="px-4 py-3.5 align-top">No. 467/468, BHIVE Workspace, Sri Krishna Temple Road, Indiranagar, Bengaluru, Karnataka – 560038</td>
+ <td className="px-4 py-3.5 align-top">Indiranagar, Bengaluru, India</td>
  </tr>
  </tbody>
  </table>
