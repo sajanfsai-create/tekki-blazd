@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Reveal from './Reveal';
 import Modal from './Modal';
 import VideoModal from './VideoModal';
@@ -7,6 +7,12 @@ import SampleReportPreview from './SampleReportPreview';
 export default function DemoSection() {
  const [isVideoOpen, setIsVideoOpen] = useState(false);
  const [isReportOpen, setIsReportOpen] = useState(false);
+
+ useEffect(() => {
+  const handleOpenDemoVideo = () => setIsVideoOpen(true);
+  window.addEventListener('openDemoVideo', handleOpenDemoVideo);
+  return () => window.removeEventListener('openDemoVideo', handleOpenDemoVideo);
+ }, []);
 
  return (
  <section className="bg-white py-12 md:py-5" id="demo">

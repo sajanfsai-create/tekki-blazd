@@ -6,21 +6,21 @@ export default function WhoSection() {
  label: 'Homes & Families',
  title: 'Slow, noisy, shutting down — repair or replace?',
  quote: '“Before you spend ₹60,000 on a new laptop, spend ₹299 to see what’s actually wrong.”',
- desc: 'Most “dying” PCs just need one small fix. Tekki Blaze names the exact part that needs attention and what it should cost — and after any service, a re-scan gives you a dated record that everything is back in shape.',
+ desc: 'Most “dying” PCs need only one small fix. Blaze names the exact part and its fair market cost — and a re-scan after any service confirms everything is back in shape.',
  icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
  },
  {
  label: 'Students & Freshers',
  title: 'Laptops die during exams. Never during holidays.',
- quote: '“A blue screen the night before submission never comes out of nowhere — the warning signs were there for weeks.”',
- desc: "Tekki Blaze reads those warnings early — SSD wear, overheating, crash history — while there’s still time to fix them cheaply. And the Compatibility Matrix tells you if your machine can actually handle Android Studio, VS Code, or whatever your course throws at it next semester.",
+ quote: '“A blue screen never comes out of nowhere — the warning signs were there for weeks.”',
+ desc: "Blaze catches those warnings early — SSD wear, overheating, crash history — while they’re still cheap to fix, and confirms it can handle next semester's tools.",
  icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
  },
  {
  label: 'Professionals & Sellers',
- title: '“What’s wrong with it?” — the question that kills every deal',
- quote: '“On resale sites, buyers can’t verify anything you say — so they lowball, or vanish.”',
- desc: 'A dated, verifiable A–F certificate — battery wear, SSD health, every component fingerprinted — turns “trust me” into “check it yourself.” Serious buyers pay for certainty. And if one disputes the condition after the sale, your scan is on record.',
+ title: 'You maintained it well. Now you can prove it.',
+ quote: '“Photos show the outside. The real value — battery, SSD, true performance — sits inside.”',
+ desc: "Condition sets every resale price, yet listings can't show it. A dated A-F certificate — every component fingerprinted — puts the facts on record, and deals close faster.",
  icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
  }
  ];
